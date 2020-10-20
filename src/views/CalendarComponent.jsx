@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import './CalendarComponent.scss'
+import { BiChevronLeft } from "react-icons/bi";
+import { BiChevronRight } from "react-icons/bi";
+    
 
 class CalendarComponent extends Component{
 
@@ -13,30 +16,64 @@ class CalendarComponent extends Component{
                     <br/>
                     <div className="m-w">
                         <span id="schedule">Schedules Calendar</span>
-                        <span id="m-y">October 2020</span>
+                            <div className="month">
+                                <button type="button"><BiChevronLeft/></button>
+                                <span>October 2020</span>
+                                <button type="button"><BiChevronRight/></button>
+                            </div>
                     </div>
                 </div>
                 <div className="week">
-                    <span>Sunday</span>
-                    <span>Monday</span>
-                    <span>Tuesday</span>
-                    <span>Wednesday</span>
-                    <span>Thursday</span>
-                    <span>Friday</span>
-                    <span>Saturday</span>
+                    <span>SUNDAY</span>
+                    <span>MONDAY</span>
+                    <span>TUESDAY</span>
+                    <span>WEDNESDAY</span>
+                    <span>THURSDAY</span>
+                    <span>FRIDAY</span>
+                    <span>SATURDAY</span>
                 </div>
-                <div class="date">
+                <div className="date">
                         <div className="number">1</div>
-                        <div className="number">2</div>
+                        <div className="number">2
+                        
+                            <ul>
+                                <div className="li-part-one">
+                                    <li className="training">Training 101</li>
+                                    <li className="time">8:00PM - 10:00PM</li>
+                                </div>
+
+                                <div className="li-part-two">
+                                    <li className="training">Training 101</li>
+                                    <li className="time">8:00PM - 10:00PM</li>
+                                </div>
+                                
+                            </ul>
+                        </div>
                         <div className="number">3</div>
-                        <div className="number">4</div>
+                        <div className="number">4
+
+                            <ul>
+                                <div className="li-part-three">
+                                    <li className="training">Training 101</li>
+                                    <li className="time">8:00PM - 10:00PM</li>
+                                </div>
+                                
+                            </ul>
+                        </div>
                         <div className="number">5</div>
                         <div className="number">6</div>
                         <div className="number">7</div>
                         <div className="number">8</div>
                         <div className="number">9</div>
                         <div className="number">10</div>
-                        <div className="number">11</div>
+                        <div className="number">11
+                            <ul>
+                                <div className="li-part-four">
+                                    <li className="training">Training 101</li>
+                                    <li className="time">8:00PM - 10:00PM</li>
+                                </div>
+                            </ul>
+                        </div>
                         <div className="number">12</div>
                         <div className="number">13</div>
                         <div className="number">14</div>
@@ -64,3 +101,5 @@ class CalendarComponent extends Component{
 }
 
 export default CalendarComponent;
+
+                        
