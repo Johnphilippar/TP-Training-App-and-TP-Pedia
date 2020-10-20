@@ -10,6 +10,7 @@ class CalendarComponent extends Component{
                 <div className="month-week">
                     <h1>Calendar</h1>
                     <div className="border-btm"></div>
+                    <br/>
                     <div className="m-w">
                         <span id="schedule">Schedules Calendar</span>
                         <span id="m-y">October 2020</span>
