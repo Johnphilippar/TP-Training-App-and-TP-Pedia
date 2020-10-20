@@ -1,0 +1,137 @@
+.training-page{
+    padding: 32px 32px 0px 32px;
+    height: 100vh;
+    overflow-y: auto;
+
+    h1{
+        text-align: left;
+        margin-bottom: 0px; 
+    }
+
+    .border-btm{
+        background-color: #2F80ED;
+        width: 75px;
+        height: 4px;
+    }
+
+    .training-body{
+        width: 100%;
+        height: calc(100vh - 84px);
+        padding:32px 0px;
+        display: flex; 
+
+        .trainings-section{
+            width: 340px;
+            height: 100%;
+
+            .custom-add-button{
+                width: 100%;
+                height: 50px; 
+                border-radius: 9px; 
+                border: 1px dotted #BDBDBD; 
+                box-shadow: none !important;
+                outline: none !important; 
+                background-color: transparent;
+                color: #4F4F4F;
+                font-size: 12px;
+                cursor: pointer;
+            } 
+
+            .custom-add-button:hover{
+                font-weight: 600;
+                border: 2px dotted #BDBDBD;
+            }
+
+            .list-trainings{
+                width: 100%;
+                height: calc(100vh - 178px);
+                margin-top: 12px; 
+                overflow-y: auto;
+                padding-right: 12px;
+                ul{
+                    padding: 0px;
+                    list-style-type: none;
+                    margin: 0px;
+                    position: relative; 
+
+                    li{
+                        display: flex;
+                        height: 90px;
+                        width: 100%;
+                        padding-left: 16px;
+                        border-radius: 9px;
+                        margin-bottom: 6px;
+                        cursor: pointer;
+
+                        img{
+                            height: 65px;
+                            width: 65px;
+                            border-radius: 50%;
+                            border: 3px solid #f1f1f1;
+                            object-fit: cover;
+                            box-sizing: border-box;
+                            box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.25);
+                            margin-top: auto;
+                            margin-bottom: auto;
+                        }
+
+                        .info{
+                            width: 100%;
+                            display: block;
+                            padding-left: 8px;
+                            display: flex;
+
+                            div{
+                                height: auto;
+                                margin-top: auto;
+                                margin-bottom: auto;
+                                width: 100%;
+
+                                label{
+                                    width: 100%;
+                                    text-align: left;
+                                    font-weight: 600;
+                                    font-size: 14px;
+                                    margin-bottom: 0px;
+                                    padding-right: 8px;
+                                }
+    
+                                small{
+                                    width: 100%;
+                                    font-size: 12px;
+                                    text-align: left;
+                                    float: left;
+                                    padding-right: 8px;
+                                }
+                            }
+
+
+                        }
+                        
+                    }
+
+                    li:hover{
+                        background-color: #6ea1e4;
+                        color: #f1f1f1; 
+                        left: -12px;
+                        z-index: 999;
+                        box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.25);
+                    }
+
+                    .li-active{
+                        background-color: #2F80ED !important;
+                        color: #f1f1f1; 
+                        left: -12px;
+                        z-index: 999;
+                        box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.25);
+                    }
+                }
+            }
+
+        } 
+    }
+
+    .information-section{
+
+    }
+}
