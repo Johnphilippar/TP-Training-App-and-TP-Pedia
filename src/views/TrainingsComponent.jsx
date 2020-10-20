@@ -107,7 +107,7 @@ class TrainingsComponent extends Component{
                         </div>
                     </div>
                     <div className="information-section">
-                        {/* do some stuff here */}
+                        <h1>Hello World</h1>
                     </div>
                 </div>
             </div>
