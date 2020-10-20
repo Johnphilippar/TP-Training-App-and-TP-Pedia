@@ -132,6 +132,160 @@
     }
 
     .information-section{
+        padding: 40px;
+        width: 100%;
+        display: block;
+        height: 88vh;
+        overflow-y: auto;
+            .trainings-body-title{
+                display: flow-root;
+                span{
+                    float: left;
+                    font-size: 24px;
+                    font-weight: 600;
+                    line-height: 33px;
+                }
+                button{
+                    float: right;
+                    background-color: #ffffff;
+                    border: #ffffff;
+                    .fas{
+                        font-size: 28px;
+                    }
+                }
+            }
+            .trainings-body-code{
+                text-align: left;
+                margin-top: 4px;
+                span{
+                    background: #93D4FA;
+                    border-radius: 12px;
+                    font-size: 13px;
+                    line-height: 15px;
+                    padding: 8px 24px;
+                    color: #0058CF;
+                    font-weight: 600;
+                }
+            }
+            .trainings-body-image{
+                padding: 20px 0;
+                img{
+                    height: 500px;
+                    width: 100%;
+                }
+            }
+            .trainings-body-summary{
+                text-align: left;
+                h5{
+                    font-size: 13px;
+                    line-height: 15px;
+                    color: #2e2e2e;
+                    font-weight: bold;
 
+                    span{
+                        font-weight: normal;
+                    }
+                    
+                }
+                .trainings-body-desc{
+                    p{
+                        font-size: 12px;
+                        line-height: 14px;
+                        color: #2e2e2e;
+                        font-weight: normal;
+                    }
+                }
+            }
+            .trainings-body-main-schedule{
+                text-align: left;
+                h5{
+                    font-size: 24px;
+                }
+                .custom-add-button{
+                    width: 350px;
+                    padding: 18px;
+                    border: 1px dashed #bdbdbd;
+                    box-sizing: border-box;
+                    font-size: 12px;
+                    background-color: #ffffff;
+                }
+                .custom-add-button:hover{
+                    font-weight: 600;
+                    border: 2px dotted #BDBDBD;
+                }
+
+                .schedule{
+
+                    .schedule-date{
+                        padding: 8px 0;
+                        span{
+                            font-size: 14px;
+                            line-height: 19px;
+                            font-weight: 600;
+                            color: #828282;
+                        }
+                    }
+                    .schedule-time-desc{
+                        display: flex;
+                        .schedule-time{
+                            span{
+                                color: #333333;
+                                font-size: 18px;
+                                line-height: 25px;
+                                font-weight: bold;
+                            }
+                            p{
+                                font-size: 12px;
+                                line-height: 16px;
+                                color: #828282;
+                            }
+                        }
+                    }
+                    .schedule-first-border{
+                        width: 6px;
+                        height: 50px;
+                        border-radius: 8px;
+                        background: #2F80ED;
+                        margin: 0 30px;
+                    }
+                    .schedule-second-border{
+                        width: 6px;
+                        height: 50px;
+                        border-radius: 8px;
+                        background: #219653;
+                        margin: 0 30px;
+                    }
+                    .schedule-desc{
+                        .schedule-name-position{
+                            span{
+                                font-size: 14px;
+                                line-height: 15px;
+                                color: #333333;
+                            }
+                        }
+                        .schedule-location{
+                            span{
+                                font-size: 12px;
+                                line-height: 16px;
+                                color: #bdbdbd;
+                            }
+                        }
+                    }
+                }
+            }
     }
+}
+
+
+.ReactModal__Content{
+    width: 500px;
+    height: 650px;
+    margin: auto;
+    padding: 0 !important;
+
+    img{
+        height: 250px;
+        width: 500px;
+    }
+
 }
