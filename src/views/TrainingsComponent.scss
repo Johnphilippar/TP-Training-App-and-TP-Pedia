@@ -282,10 +282,223 @@
     height: 650px;
     margin: auto;
     padding: 0 !important;
+    border-radius: 12px !important;
+    overflow: hidden;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
-    img{
-        height: 250px;
-        width: 500px;
+    .add-new-training-modal{
+        img{
+            height: 204px;
+            width: 498px;
+        }
+        
+        .add-training-form{
+            padding: 40px;
+
+            .add-training-title{
+                margin-bottom: 12px;
+
+                h4{
+                    color: #000000;
+                }
+            }
+
+            .form-group{
+                margin: 0;
+                span{
+                    font-size: 10px;
+                    line-height: 12px;
+                    color: #4f4f4f;
+                    font-weight: bold;
+                }
+                .form-control{
+                    font-size: 14px;
+                    line-height: 16px;
+                    color: #2e2e2e;
+                    font-weight: bold;
+                }
+            }
+
+            .add-training-button{
+                text-align: right;
+                margin-top: 50px;
+                
+                .cancel-button{
+                    margin-right: 12px;
+                    padding: 8px 20px;
+                    border-radius: 12px;
+                    font-size: 12px;
+                    line-height: 14px;
+                    text-align: center;
+                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                    background: #EB5757;
+                    font-family: roboto;
+                    border: none;
+                    color: #ffffff;
+                    font-weight: normal;
+                }
+
+                .submit-button{
+                    margin-right: 12px;
+                    padding: 8px 20px;
+                    border-radius: 12px;
+                    font-size: 12px;
+                    line-height: 14px;
+                    text-align: center;
+                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                    background: #EB5757;
+                    font-family: roboto;
+                    border: none;
+                    color: #ffffff;
+                    font-weight: normal;
+                }
+
+                .btn-danger{
+                    margin-right: 12px;
+                    background: #EB5757;
+                    font-size: 12px;
+                    font-weight: normal;
+                    font-family: roboto;
+                    padding: 8px 20px;
+                    border-radius: 8px;
+                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                }
+                .btn-primary{
+                    margin-right: 12px;
+                    font-size: 12px;
+                    font-weight: normal;
+                    font-family: roboto;
+                    padding: 8px 20px;
+                    border-radius: 8px;
+                    background: #2F80ED;
+                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                }
+            }
+
+        }
+    }
+
+    .add-new-schedule-modal{
+        img{
+            height: 204px;
+            width: 490px;
+        }
+        
+        .add-schedule-form{
+            padding: 40px;
+
+            .add-schedule-title{
+                padding: 12px 0;
+
+                h4{
+                    color: #000000;
+                }
+            }
+
+            .form-group{
+                margin: 0;
+                span{
+                    font-size: 10px;
+                    line-height: 12px;
+                    color: #4F4F4F;
+                    font-weight: bold;
+                }
+                .form-control{
+                    font-size: 14px;
+                    line-height: 16px;
+                    color: #2e2e2e;
+                }
+            }
+
+            .add-schedule-date-time{
+                display: flex;
+                .add-schedule-date{
+                    .date-form{
+                        margin-right: 12px;
+                        .form-control{
+                            width: 200px;
+                            font-weight: normal;
+                        }
+                    }
+                }
+                .add-schedule-time{
+                    .time-form{
+                        .form-control{
+                            width: 200px;
+                            font-weight: normal;
+                        }
+                    }
+                }
+            }
+
+            .add-schedule-location{
+
+                .add-schedule-location-title{
+                    padding: 12px 0;
+                    margin-top: 12px;
+                }
+
+            }
+
+            .add-schedule-button{
+                text-align: right;
+                margin-top: 50px;
+                
+                .cancel-button{
+                    margin-right: 12px;
+                    padding: 8px 20px;
+                    border-radius: 12px;
+                    font-size: 12px;
+                    line-height: 14px;
+                    text-align: center;
+                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                    background: #EB5757;
+                    font-family: roboto;
+                    border: none;
+                    color: #ffffff;
+                    font-weight: normal;
+                }
+
+                .submit-button{
+                    margin-right: 12px;
+                    padding: 8px 20px;
+                    border-radius: 12px;
+                    font-size: 12px;
+                    line-height: 14px;
+                    text-align: center;
+                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                    background: #EB5757;
+                    font-family: roboto;
+                    border: none;
+                    color: #ffffff;
+                    font-weight: normal;
+                }
+
+                .btn-danger{
+                    margin-right: 12px;
+                    background: #EB5757;
+                    font-size: 12px;
+                    font-weight: normal;
+                    font-family: roboto;
+                    width: 90px;
+                    padding: 8px 20px;
+                    border-radius: 8px;
+                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                }
+                .btn-primary{
+                    margin-right: 12px;
+                    font-size: 12px;
+                    font-weight: normal;
+                    padding: 8px 20px;
+                    width: 90px;
+                    font-family: roboto;
+                    border-radius: 8px;
+                    background: #2F80ED;
+                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                }
+            }
+
+        }
     }
 
 }

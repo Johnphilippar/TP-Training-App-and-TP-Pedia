@@ -1,22 +1,55 @@
-import React, { Component , useState } from 'react';
+import React, { Component, useState } from 'react';
 import './TrainingsComponent.scss';
 import image from '../image/tobio.jpg';
 import Modal from 'react-modal';
 
 const Trainings = () => {
 
-    const [modalIsOpen , setModalIsOpen] = useState(false)
+    const [addTrainingModal, setAddTrainingModal] = useState(false)
+    const [addScheduleModal, setAddScheduleModal] = useState(false)
     return (
         <div className="training-page">
             <h1>Trainings</h1>
             <div className="border-btm"></div>
             <div className="training-body">
                 <div className="trainings-section">
-                    <button className="custom-add-button" onClick={()=>setModalIsOpen(true)}>Click here to add new training</button>
-                    <Modal isOpen={modalIsOpen}>
-                        <img src={image} alt=""/>
-                        <div>
-                            <button onClick={()=>setModalIsOpen(false)}>Close</button>
+                    <button className="custom-add-button" onClick={() => setAddTrainingModal(true)}>Click here to add new training</button>
+                    <Modal isOpen={addTrainingModal}>
+                        <div className="add-new-training-modal">
+                            <img src={image} alt="" />
+                            <div className="add-training-form">
+                                <div className="add-training-title">
+                                    <h4>Training Information</h4>
+                                </div>
+                                <form action="">
+                                    <div className="form-group">
+                                        <span>Training title</span>
+                                        <input type="text" className="form-control" placeholder="Training title 101" />
+                                    </div>
+
+                                    <div className="form-group">
+                                        <span>Pre - requisite</span>
+                                        <input type="text" className="form-control" placeholder="Training title 101" />
+                                    </div>
+
+                                    <div className="form-group">
+                                        <span>Description</span>
+                                        <select className="form-control" name="" id="">
+                                            <option value="">Training title 101</option>
+                                        </select>
+                                    </div>
+
+                                    <div className="form-group">
+                                        <span>Training title</span>
+                                        <input type="text" className="form-control" placeholder="Training title 101" />
+                                    </div>
+
+                                    <div className="add-training-button">
+                                        <button className="btn btn-danger">Cancel</button>
+                                        <button className="btn btn-primary">Submit</button>
+                                    </div>
+                                </form>
+                            </div>
                         </div>
                     </Modal>
                     <div className="list-trainings">
@@ -153,9 +186,110 @@ const Trainings = () => {
                     </div>
                     <div className="trainings-body-main-schedule">
                         <h5>Schedule</h5>
-                        <button className="custom-add-button">
+                        <button className="custom-add-button" onClick={() => setAddScheduleModal(true)}>
                             Click here to add new training
                         </button>
+                        <Modal isOpen={addScheduleModal}>
+                            <div className="add-new-schedule-modal">
+                                <img src={image} alt="" />
+                                <div className="add-schedule-form">
+                                    <div className="add-schedule-title">
+                                        <h4>Setup new Schedule</h4>
+                                    </div>
+                                    <form action="">
+                                        <div className="form-group">
+                                            <span>Training title</span>
+                                            <input type="text" className="form-control" placeholder="schedule title 101" />
+                                        </div>
+
+                                        <div className="form-group">
+                                            <span>Pre - requisite</span>
+                                            <input type="text" className="form-control" placeholder="schedule title 101" />
+                                        </div>
+
+                                        <div className="add-schedule-date-time">
+                                            <div className="add-schedule-date">
+
+                                                <div className="form-group date-form">
+                                                    <span>Starting Date</span>
+                                                    <input type="date" className="form-control" placeholder="2020-09-18" />
+                                                </div>
+
+                                                <div className="form-group date-form">
+                                                    <span>End Date</span>
+                                                    <input type="date" className="form-control" placeholder="2020-09-18" />
+                                                </div>
+                                            </div>
+
+                                            <div className="add-schedule-time">
+
+                                                <div className="form-group time-form">
+                                                    <span>Starting Date</span>
+                                                    <input type="date" className="form-control" placeholder="2020-09-18" />
+                                                </div>
+
+                                                <div className="form-group time-form">
+                                                    <span>End Date</span>
+                                                    <input type="date" className="form-control" placeholder="2020-09-18" />
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div className="form-group">
+                                            <span>Description</span>
+                                            <select className="form-control" name="" id="">
+                                                <option value="Training title 101">Juan Dela Cruz, WFM Senior BARC Analyst</option>
+                                            </select>
+                                        </div>
+
+                                        <div className="add-schedule-location">
+                                            <div className="add-schedule-location-title">
+                                                <h4>Location</h4>
+                                            </div>
+
+                                            <div className="form-group">
+                                                <span>Site Name</span>
+                                                <select className="form-control" name="" id="">
+                                                    <option value="">TP PH, Octagon Centre</option>
+                                                </select>
+                                            </div>
+
+
+                                            <div className="form-group">
+                                                <span>Room</span>
+                                                <input type="text" className="form-control" value="Training room 5" />
+                                            </div>
+                                            
+                                            <div className="form-group">
+                                                <span>Maximum Capacity</span>
+                                                <input type="number" className="form-control" value="12" />
+                                            </div>
+                                            
+                                            <div className="form-group">
+                                                <span>Address</span>
+                                                <input type="textarea" className="form-control" value="San Miguel Ave, San Antonio, Pasig, Metro Manila" />
+                                            </div>
+                                            
+                                            <div className="form-group">
+                                                <span>Country</span>
+                                                <input type="text" className="form-control" value="Training room 5" />
+                                            </div>
+                                            
+                                            <div className="form-group">
+                                                <span>Room</span>
+                                                <input type="textarea" className="form-control" value="Description its up to you" />
+                                            </div>
+
+                                        </div>
+
+                                        <div className="add-schedule-button">
+                                            <button className="btn btn-danger">Cancel</button>
+                                            <button className="btn btn-primary">Submit</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </Modal>
                         <div className="schedule">
                             <div className="schedule-date">
                                 <span>6 October 2020</span>
@@ -196,7 +330,7 @@ const Trainings = () => {
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div className="schedule">
                             <div className="schedule-date">
                                 <span>11 October 2020 - 12 October 2020</span>
@@ -237,7 +371,7 @@ const Trainings = () => {
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div className="schedule">
                             <div className="schedule-date">
                                 <span>13 October 2020</span>
