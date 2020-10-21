@@ -1,6 +1,8 @@
 
 .calendar{
     padding: 32px;
+    height: 100vh;
+    overflow-y: auto;
     h1{
         text-align: left;
         margin-bottom: 0px;
@@ -9,6 +11,7 @@
 
     .month-week{
         justify-content: space-between;
+        margin-bottom: 12px;
 
         .border-btm{
             background-color: #2F80ED;
@@ -18,36 +21,52 @@
 
         .m-w{
             padding-top: 10px;
-            width: auto;
+            width: 100%;
             height: auto;
+            display: block;
+            height: 40px;
 
-            #schedule{
+            
+
+            .schedule{
                 float: left;
-                font-size: 10px;
-                
-
+                font-size: 14px !important;
+                font-weight: 500;
+                text-align: left;
             }
+
             .month{
                 float: right;
                 padding:0px;
                 margin-right: 0px; 
                 margin-top: -10px;
-                width: 130px;
-                height: 25px;
+                width: 200px; 
                 background-color: #2F80ED;
                 font-size: 12px;
-                border-radius: 6px;
-    
+                border-radius: 9px;
+                height: 40px;
+                box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.25);
+                display: flex;
+
                 span{
-                    color:#FFFFFF;
-                    font-size: 12px;
-                    justify-items: center;
+                    width: 100%;
+                    height: 100%;  
+                    color:#FFFFFF; 
+                    font-weight: 500;  
+                    font-size: 14px; 
+                    text-align: center;
+                    line-height: 40px;
                 }
                 button{
                     size: 12px;
                     background-color: #2F80ED;
                     border: none;
                     color: #FFFFFF;
+                    height: 100%; 
+                    border-radius: 9px; 
+                    outline: none !important;
+                    box-shadow: none !important;
+                    font-size: 14px;
                 }
 
             }
@@ -57,12 +76,16 @@
     }
 
     .week{
+        width: 100%;
         display: grid;
         grid-template-columns: repeat(auto-fit,minmax(20px,1fr));
         grid-gap: 2px;
         background-color: #F4F5FA;
         border-radius: 10px;
-        margin-top: 15px;
+        margin-top: 16px;
+        font-weight: 600;
+        color: #535353;
+        margin-bottom: 6px;
 
         span{
             padding: 6px;
@@ -71,11 +94,9 @@
         }
     }
     .date {
-        display: grid;
-        grid-template-columns: repeat(auto-fit,minmax(140px,1fr));
-        grid-gap: 25px;
-        padding: 30px;
-        justify-items: left;
+        display: grid; 
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+        justify-items: left; 
         
         div{
             display: flex;
@@ -83,14 +104,24 @@
             text-align: left;
             height:65px;
         }
+
         .number{
             padding: 0px;
             font-size: 14px;
+            display: block;
+            font-weight: 600;
+            color: #535353;
+            width: 100%;
+            min-height: 220px;
+            border-right: 1px solid #F4F5FA; 
+            border-bottom: 1px solid #F4F5FA; 
+            padding: 16px;
 
             ul{
                 padding: 2px;
+                margin-left: -22px;
 
-                .li-part-one{
+                .li-sched-blue{
                     display: inline-block;
                     color: #1A6AD9;
                     width: 143px;
@@ -103,7 +134,7 @@
                     box-sizing:border-box;
                     border-left-width: 10px;
                 }
-                .li-part-two{
+                .li-sched-green{
                     display: inline-block;
                     color: #13C16C;
                     width: 143px;
@@ -116,7 +147,7 @@
                     box-sizing:border-box;
                     border-left-width: 10px;
                 }
-                .li-part-three{
+                .li-sched-purple{
                     display: inline-block;
                     color: #8A7BF8;
                     width: 143px;
@@ -129,7 +160,7 @@
                     box-sizing:border-box;
                     border-left-width: 10px;
                 }
-                .li-part-four{
+                .li-sched-orange{
                     display: inline-block;
                     color: #F6B94F;
                     width: 143px;
