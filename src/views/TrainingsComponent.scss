@@ -151,6 +151,7 @@
                         border: #ffffff;
                         outline: none !important; 
                         color: #4e4e4e;
+                        font-family: 'Roboto', sans-serif;
                         .fas{
                             font-size: 18px;
                         }
@@ -347,6 +348,7 @@
                     border: none;
                     color: #ffffff;
                     font-weight: normal;
+                    font-family: 'Roboto', sans-serif;
                 }
 
                 .submit-button{
@@ -362,6 +364,7 @@
                     border: none;
                     color: #ffffff;
                     font-weight: normal;
+                    font-family: 'Roboto', sans-serif;
                 }
 
                 .btn-danger{
@@ -373,6 +376,7 @@
                     padding: 8px 20px;
                     border-radius: 8px;
                     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                    font-family: 'Roboto', sans-serif;
                 }
                 .btn-primary{
                     margin-right: 12px;
@@ -383,6 +387,7 @@
                     border-radius: 8px;
                     background: #2F80ED;
                     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                    font-family: 'Roboto', sans-serif;
                 }
             }
 
@@ -422,8 +427,8 @@
             }
 
             .add-schedule-date-time{
-                display: flex;
                 .add-schedule-date{
+                    display: flex;
                     .date-form{
                         margin-right: 12px;
                         .form-control{
@@ -433,7 +438,9 @@
                     }
                 }
                 .add-schedule-time{
+                    display: flex;
                     .time-form{
+                        margin-right: 12px;
                         .form-control{
                             width: 200px;
                             font-weight: normal;
@@ -468,6 +475,7 @@
                     border: none;
                     color: #ffffff;
                     font-weight: normal;
+                    font-family: 'Roboto', sans-serif;
                 }
 
                 .submit-button{
@@ -483,6 +491,7 @@
                     border: none;
                     color: #ffffff;
                     font-weight: normal;
+                    font-family: 'Roboto', sans-serif;
                 }
 
                 .btn-danger{
@@ -495,6 +504,7 @@
                     padding: 8px 20px;
                     border-radius: 8px;
                     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                    font-family: 'Roboto', sans-serif;
                 }
                 .btn-primary{
                     margin-right: 12px;
@@ -502,7 +512,7 @@
                     font-weight: normal;
                     padding: 8px 20px;
                     width: 90px;
-                    font-family: roboto;
+                    font-family: 'Roboto', sans-serif;
                     border-radius: 8px;
                     background: #2F80ED;
                     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
