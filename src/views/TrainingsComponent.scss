@@ -1,5 +1,5 @@
 .training-page{
-    padding: 32px 32px 0px 32px;
+    padding: 32px 0px 0px 32px;
     height: 100vh;
     overflow-y: auto;
 
@@ -16,12 +16,12 @@
 
     .training-body{
         width: 100%;
-        height: calc(100vh - 84px);
+        height: calc(100vh - 112px) !important;
         padding:32px 0px;
         display: flex; 
 
         .trainings-section{
-            width: 340px;
+            width: 340px !important;
             height: 100%;
 
             .custom-add-button{
@@ -129,9 +129,397 @@
             }
 
         } 
+
+        .information-section{
+            padding: 40px;
+            width: calc(100% - 340px);
+            display: block;
+            height: calc(100vh - 118px);
+            overflow-y: auto;
+    
+                .trainings-body-title{
+                    display: flow-root;
+                    span{
+                        float: left;
+                        font-size: 24px;
+                        font-weight: 600;
+                        line-height: 33px;
+                    }
+                    button{
+                        float: right;
+                        background-color: #ffffff;
+                        border: #ffffff;
+                        outline: none !important; 
+                        color: #4e4e4e;
+                        font-family: 'Roboto', sans-serif;
+                        .fas{
+                            font-size: 18px;
+                        }
+                    }
+
+                    button:hover{
+                        color: #7e7e7e;
+                    }
+                }
+                
+                .trainings-body-code{
+                    text-align: left;
+                    margin-top: 4px;
+                    span{
+                        background: #93D4FA;
+                        border-radius: 12px;
+                        font-size: 13px;
+                        line-height: 15px;
+                        padding: 8px 24px;
+                        color: #0058CF;
+                        font-weight: 600;
+                    }
+                }
+                .trainings-body-image{
+                    padding: 20px 0;
+                    img{
+                        width: 100%;
+                        height: auto;
+                        object-fit: contain;
+                    }
+                }
+                .trainings-body-summary{
+                    text-align: left;
+                    h5{
+                        font-size: 13px;
+                        line-height: 15px;
+                        color: #2e2e2e;
+                        font-weight: bold;
+                        margin-bottom: 16px;
+    
+                        span{
+                            font-weight: normal;
+                        }
+                        
+                    }
+
+                    .trainings-body-desc{
+                        p{
+                            font-size: 13px;
+                            line-height: 14px;
+                            color: #2e2e2e;
+                            font-weight: normal;
+                        }
+                    }
+                }
+                .trainings-body-main-schedule{
+                    text-align: left;
+                    h5{
+                        font-size: 24px;
+                    }
+                    .custom-add-button{
+                        width: 350px;
+                        padding: 18px;
+                        border: 1px dashed #bdbdbd;
+                        box-sizing: border-box;
+                        font-size: 12px;
+                        background-color: #ffffff;
+                    }
+                    .custom-add-button:hover{
+                        font-weight: 600;
+                        border: 2px dotted #BDBDBD;
+                    }
+    
+                    .schedule{
+    
+                        .schedule-date{
+                            padding: 8px 0;
+                            span{
+                                font-size: 14px;
+                                line-height: 19px;
+                                font-weight: 500;
+                                color: #828282;
+                            }
+                        }
+                        .schedule-time-desc{
+                            display: flex;
+                            .schedule-time{
+                                span{
+                                    color: #333333;
+                                    font-size: 18px;
+                                    line-height: 25px;
+                                    font-weight: bold;
+                                }
+                                p{
+                                    font-size: 12px;
+                                    line-height: 16px;
+                                    color: #828282;
+                                }
+                            }
+                        }
+                        .schedule-first-border{
+                            width: 6px;
+                            height: 50px;
+                            border-radius: 8px;
+                            background: #2F80ED;
+                            margin: 0 30px;
+                        }
+                        .schedule-second-border{
+                            width: 6px;
+                            height: 50px;
+                            border-radius: 8px;
+                            background: #219653;
+                            margin: 0 30px;
+                        }
+                        .schedule-desc{
+                            .schedule-name-position{
+                                span{
+                                    font-size: 14px;
+                                    line-height: 15px;
+                                    color: #333333;
+                                }
+                            }
+                            .schedule-location{
+                                span{
+                                    font-size: 12px;
+                                    line-height: 16px;
+                                    color: #828282;
+                                }
+                            }
+                        }
+                    }
+                }
+        }
+    }
+}
+
+
+.ReactModal__Content{
+    width: 500px;
+    height: 650px;
+    margin: auto;
+    padding: 0 !important;
+    border-radius: 12px !important;
+    overflow: hidden;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    .add-new-training-modal{
+        img{
+            height: 204px;
+            width: 498px;
+        }
+        
+        .add-training-form{
+            padding: 40px;
+
+            .add-training-title{
+                margin-bottom: 12px;
+
+                h4{
+                    color: #000000;
+                }
+            }
+
+            .form-group{
+                margin: 0;
+                span{
+                    font-size: 10px;
+                    line-height: 12px;
+                    color: #4f4f4f;
+                    font-weight: bold;
+                }
+                .form-control{
+                    font-size: 14px;
+                    line-height: 16px;
+                    color: #2e2e2e;
+                    font-weight: bold;
+                }
+            }
+
+            .add-training-button{
+                text-align: right;
+                margin-top: 50px;
+                
+                .cancel-button{
+                    margin-right: 12px;
+                    padding: 8px 20px;
+                    border-radius: 12px;
+                    font-size: 12px;
+                    line-height: 14px;
+                    text-align: center;
+                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                    background: #EB5757;
+                    font-family: roboto;
+                    border: none;
+                    color: #ffffff;
+                    font-weight: normal;
+                    font-family: 'Roboto', sans-serif;
+                }
+
+                .submit-button{
+                    margin-right: 12px;
+                    padding: 8px 20px;
+                    border-radius: 12px;
+                    font-size: 12px;
+                    line-height: 14px;
+                    text-align: center;
+                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                    background: #EB5757;
+                    font-family: roboto;
+                    border: none;
+                    color: #ffffff;
+                    font-weight: normal;
+                    font-family: 'Roboto', sans-serif;
+                }
+
+                .btn-danger{
+                    margin-right: 12px;
+                    background: #EB5757;
+                    font-size: 12px;
+                    font-weight: normal;
+                    font-family: roboto;
+                    padding: 8px 20px;
+                    border-radius: 8px;
+                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                    font-family: 'Roboto', sans-serif;
+                }
+                .btn-primary{
+                    margin-right: 12px;
+                    font-size: 12px;
+                    font-weight: normal;
+                    font-family: roboto;
+                    padding: 8px 20px;
+                    border-radius: 8px;
+                    background: #2F80ED;
+                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                    font-family: 'Roboto', sans-serif;
+                }
+            }
+
+        }
     }
 
-    .information-section{
+    .add-new-schedule-modal{
+        img{
+            height: 204px;
+            width: 490px;
+        }
+        
+        .add-schedule-form{
+            padding: 40px;
 
+            .add-schedule-title{
+                padding: 12px 0;
+
+                h4{
+                    color: #000000;
+                }
+            }
+
+            .form-group{
+                margin: 0;
+                span{
+                    font-size: 10px;
+                    line-height: 12px;
+                    color: #4F4F4F;
+                    font-weight: bold;
+                }
+                .form-control{
+                    font-size: 14px;
+                    line-height: 16px;
+                    color: #2e2e2e;
+                }
+            }
+
+            .add-schedule-date-time{
+                .add-schedule-date{
+                    display: flex;
+                    .date-form{
+                        margin-right: 12px;
+                        .form-control{
+                            width: 200px;
+                            font-weight: normal;
+                        }
+                    }
+                }
+                .add-schedule-time{
+                    display: flex;
+                    .time-form{
+                        margin-right: 12px;
+                        .form-control{
+                            width: 200px;
+                            font-weight: normal;
+                        }
+                    }
+                }
+            }
+
+            .add-schedule-location{
+
+                .add-schedule-location-title{
+                    padding: 12px 0;
+                    margin-top: 12px;
+                }
+
+            }
+
+            .add-schedule-button{
+                text-align: right;
+                margin-top: 50px;
+                
+                .cancel-button{
+                    margin-right: 12px;
+                    padding: 8px 20px;
+                    border-radius: 12px;
+                    font-size: 12px;
+                    line-height: 14px;
+                    text-align: center;
+                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                    background: #EB5757;
+                    font-family: roboto;
+                    border: none;
+                    color: #ffffff;
+                    font-weight: normal;
+                    font-family: 'Roboto', sans-serif;
+                }
+
+                .submit-button{
+                    margin-right: 12px;
+                    padding: 8px 20px;
+                    border-radius: 12px;
+                    font-size: 12px;
+                    line-height: 14px;
+                    text-align: center;
+                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                    background: #EB5757;
+                    font-family: roboto;
+                    border: none;
+                    color: #ffffff;
+                    font-weight: normal;
+                    font-family: 'Roboto', sans-serif;
+                }
+
+                .btn-danger{
+                    margin-right: 12px;
+                    background: #EB5757;
+                    font-size: 12px;
+                    font-weight: normal;
+                    font-family: roboto;
+                    width: 90px;
+                    padding: 8px 20px;
+                    border-radius: 8px;
+                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                    font-family: 'Roboto', sans-serif;
+                }
+                .btn-primary{
+                    margin-right: 12px;
+                    font-size: 12px;
+                    font-weight: normal;
+                    padding: 8px 20px;
+                    width: 90px;
+                    font-family: 'Roboto', sans-serif;
+                    border-radius: 8px;
+                    background: #2F80ED;
+                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                }
+            }
+
+        }
     }
+
 }
