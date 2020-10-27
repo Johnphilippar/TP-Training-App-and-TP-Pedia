@@ -1,9 +1,14 @@
-import React, { Component, useState , useEffect } from 'react';
+
+import React, { Component, useState, useEffect } from 'react'; 
+import { connect } from 'react-redux';
 import './TrainingsComponent.scss';
 import image from '../image/tobio.jpg';
 import Modal from 'react-modal';
-
-const Trainings = () => {
+import { useForm } from 'react-hook-form';
+import PropTypes from 'prop-types'
+import { addNewTraining } from '../actions/NewTraining';
+Modal.setAppElement('#root');
+const Trainings = ({ addNewTraining }) => {
 
     useEffect(() => {
         const getTrainingData = async () => {
@@ -12,7 +17,8 @@ const Trainings = () => {
             console.log(jsonResponse);
         }
         getTrainingData();
-    } , [])
+    }, [])
+
 
     const [addTrainingModal, setAddTrainingModal] = useState(false)
     const [addScheduleModal, setAddScheduleModal] = useState(false)
@@ -24,27 +30,51 @@ const Trainings = () => {
         Training_Details: ''
     })
 
-    const [formScheduleData, setFormScheduleData] = useState({
-        Training_Title: '',
-        preRequisite: '',
-        startDate: '',
-        endDate: '',
-        startTime: '',
-        endTime: '',
-        siteName: '',
-        room: '',
-        maxcapacity: '',
-        address: '',
-        country: '',
-        Training_Details: ''
-    })
+    const [formTrainingPrerequisiteData, setFormTrainingPrerequisiteData] = useState([
+        {
+            Count_id: '',
+            Training_Id: '',
+            Required_Training_Id: ''
+        }
+    ])
 
     const { Training_Title, preRequisite, Training_Details } = formTrainingData;
-
-    const { startDate, endDate, startTime, endTime, siteName, room, maxcapacity, address, country} = formScheduleData;
+    
+    const { Count_id, Training_Id, Required_Training_Id } = formTrainingPrerequisiteData;
 
     const onChangeTraining = e => setFormTrainingData({ ...formTrainingData, [e.target.value]: e.target.value })
-    const onChangeSchedule = f => setFormScheduleData({ ...formScheduleData, [f.target.value]: f.target.value })
+
+    const onChangePrerequisite = f => setFormTrainingPrerequisiteData({ ...formTrainingPrerequisiteData, [f.target.value]: f.target.value })
+
+    const onSubmit = e => {
+        e.preventDefault();
+        addNewTraining(formTrainingData,formTrainingPrerequisiteData)
+    }
+
+    
+
+    // const [formScheduleData, setFormScheduleData] = useState({
+    //     Training_Title: '',
+    //     preRequisite: '',
+    //     startDate: '',
+    //     endDate: '',
+    //     startTime: '',
+    //     endTime: '',
+    //     siteName: '',
+    //     room: '',
+    //     maxcapacity: '',
+    //     address: '',
+    //     country: '',
+    //     Training_Details: ''
+    // })
+
+    // const { trainingForm, handleSubmit , errors } = useForm();
+
+    // const onSubmitTraining = (data) => {
+    //     console.log(data)
+    // }
+
+    // const { startDate, endDate, startTime, endTime, siteName, room, maxcapacity, address, country } = formScheduleData;
 
 
 
@@ -63,27 +93,27 @@ const Trainings = () => {
                                 <div className="add-training-title">
                                     <h4>Training Information</h4>
                                 </div>
-                                <form action="">
+                                <form onSubmit={e => onSubmit(e)}>
                                     <div className="form-group">
                                         <span>Training title</span>
-                                        <input type="text" className="form-control" name="Training_Title" placeholder="Training title 101" onChangeTraining={e => onChangeTraining(e)} />
+                                        <input type="text" className="form-control" name="Training_Title" onChangeTraining={e => onChangeTraining(e)}/>
                                     </div>
 
                                     <div className="form-group">
                                         <span>Pre - requisite</span>
-                                        <select className="form-control" name="" id="">
+                                        <select className="form-control" name="" id="" onChangePrerequisite={f => onChangePrerequisite(f)}>
                                             <option value="">Training title 101</option>
                                         </select>
                                     </div>
 
                                     <div className="form-group">
                                         <span>Description</span>
-                                        <input type="text" className="form-control" name="Training_Details" placeholder="Training title 101" onChangeTraining={e => onChangeTraining(e)} />
+                                        <input type="text" className="form-control" name="Training_Details" onChangeTraining={e => onChangeTraining(e)} />
                                     </div>
 
                                     <div className="add-training-button">
                                         <button className="btn btn-danger">Cancel</button>
-                                        <button className="btn btn-primary">Submit</button>
+                                        <button className="btn btn-primary" type="submit">Submit</button>
                                     </div>
                                 </form>
                             </div>
@@ -287,12 +317,12 @@ const Trainings = () => {
 
                                                 <div className="form-group date-form">
                                                     <span>Starting Date</span>
-                                                    <input type="date" className="form-control" name="startDate" placeholder="2020-09-18" onChangeSchedule={f => onChangeSchedule(f)} />
+                                                    <input type="date" className="form-control" name="startDate" placeholder="2020-09-18"/>
                                                 </div>
 
                                                 <div className="form-group date-form">
                                                     <span>End Date</span>
-                                                    <input type="date" className="form-control" placeholder="2020-09-18" onChangeSchedule={f => onChangeSchedule(f)} />
+                                                    <input type="date" className="form-control" placeholder="2020-09-18"  />
                                                 </div>
                                             </div>
 
@@ -300,12 +330,12 @@ const Trainings = () => {
 
                                                 <div className="form-group time-form">
                                                     <span>Starting Time</span>
-                                                    <input type="time" className="form-control" placeholder="2020-09-18" onChangeSchedule={f => onChangeSchedule(f)} />
+                                                    <input type="time" className="form-control" placeholder="2020-09-18"/>
                                                 </div>
 
                                                 <div className="form-group time-form">
                                                     <span>End Time</span>
-                                                    <input type="time" className="form-control" placeholder="2020-09-18" onChangeSchedule={f => onChangeSchedule(f)} />
+                                                    <input type="time" className="form-control" placeholder="2020-09-18"  />
                                                 </div>
                                             </div>
                                         </div>
@@ -332,27 +362,27 @@ const Trainings = () => {
 
                                             <div className="form-group">
                                                 <span>Room</span>
-                                                <input type="text" className="form-control" value="Training room 5" onChangeSchedule={f => onChangeSchedule(f)} />
+                                                <input type="text" className="form-control" value="Training room 5"  />
                                             </div>
 
                                             <div className="form-group">
                                                 <span>Maximum Capacity</span>
-                                                <input type="number" className="form-control" value="12" onChangeSchedule={f => onChangeSchedule(f)} />
+                                                <input type="number" className="form-control" value="12" />
                                             </div>
 
                                             <div className="form-group">
                                                 <span>Address</span>
-                                                <textarea type="text" className="form-control" value="San Miguel Ave, San Antonio, Pasig, Metro Manila" onChangeSchedule={f => onChangeSchedule(f)} />
+                                                <textarea type="text" className="form-control" value="San Miguel Ave, San Antonio, Pasig, Metro Manila"  />
                                             </div>
 
                                             <div className="form-group">
                                                 <span>Country</span>
-                                                <input type="text" className="form-control" value="Training room 5" onChangeSchedule={f => onChangeSchedule(f)} />
+                                                <input type="text" className="form-control" value="Training room 5"/>
                                             </div>
 
                                             <div className="form-group">
                                                 <span>Description</span>
-                                                <textarea type="text" className="form-control" value="Description its up to you" onChangeSchedule={f => onChangeSchedule(f)} />
+                                                <textarea type="text" className="form-control" value="Description its up to you"/>
                                             </div>
 
                                         </div>
@@ -494,4 +524,9 @@ const Trainings = () => {
     )
 }
 
+Trainings.protoTypes = {
+    addNewTraining: PropTypes.func.isRequired
+}
+
 export default Trainings;
+// export default Trainings;
