@@ -6,7 +6,6 @@
     h1{
         text-align: left;
         margin-bottom: 0px;
-        font-family: 'Roboto', sans-serif;
     }
 
 
@@ -87,7 +86,6 @@
         font-weight: 600;
         color: #535353;
         margin-bottom: 6px;
-        font-family: 'Roboto', sans-serif;
 
         span{
             padding: 6px;
@@ -114,9 +112,9 @@
             font-weight: 600;
             color: #535353;
             width: 100%;
-            min-height: 200px;
-            border-right: 1px solid #F4F5FA; 
-            border-bottom: 1px solid #F4F5FA; 
+            min-height: 220px;
+            border-right: 1px solid rgb(212, 214, 223); 
+            border-bottom: 1px solid rgb(212, 214, 223); 
             padding: 16px;
 
             ul{
@@ -178,7 +176,6 @@
 
                 li{
                     list-style-type: none;
-                    font-family: 'Roboto', sans-serif;
                 }
                 
                 .training{

@@ -49,8 +49,88 @@
         }
     
         .modal-body{
-            width: 100%;
+            width: 492px;
             margin-bottom: 1em;
+
+
+            .week-date{
+                width: 492px !important;
+                height: auto;
+                display: flex;
+
+                .rightButton{
+                    width: 30px;
+                    height: 60px;
+
+                    .button-date-right{
+                        width: 30px;
+                        height: 60px;
+                        border: 0px;
+                        box-shadow: none !important;
+                        outline: none !important;
+                        
+
+                    }
+                }
+
+                .leftButton{
+                    width: 30px;
+                    height: 60px;
+
+                    .button-date-left{
+                        width: 30px;
+                        height: 60px;
+                        border: 0px;
+                        box-shadow: none !important;
+                        outline: none !important;
+                    }
+                }
+
+                .midContent{
+                    width:432px;
+                    height: 60px;
+
+                    .weekModal{
+                        width: 100%;
+                        height: 30px;
+                        font-family: 'Roboto', sans-serif;
+                        font-weight: 400px;
+                        display: flex;
+
+                        span{
+                            width: 61.7px !important;
+                            text-align: center;
+                            height: 30px;
+                            color: #99A6B6;
+                            font-weight: 500;
+                            font-size: 16px;
+                            padding-top: 4px;
+                        }
+                    }
+                    .dateModal{
+                        width: 432px !important;
+                        height: 30px;
+                        font-family: 'Roboto', sans-serif;
+                        font-weight: 400px;
+                        display: flex; 
+                        position: relative; 
+
+                        span{
+                            width:61.7px !important;
+                            text-align: center;
+                            height: 30px;
+                            color: #2E2E2E;
+                            font-weight: 500;
+                            font-size: 16px;
+                            padding-top: 4px;
+                            position: absolute;
+                            background: #ffffff;
+                        }
+                    }
+
+                }
+
+            }
 
             .time{
                 text-align: left;
@@ -83,12 +163,6 @@
     
                 
                 }
-            }
-            .week{
-                display: grid; 
-                grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
-                font-family: 'Roboto', sans-serif;
-                font-weight: 400px;
             }
             
             .div-part-one{
