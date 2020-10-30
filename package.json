@@ -14,10 +14,10 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3"
   },
-  "configuration" : {
-    "APITrainings" : "",
-    "APIAuthentication":"http://208.109.10.234:81/PortalGateway/api/Authentication/ValidateApps",
-    "IISFolder" : ""
+  "configuration": {
+    "APITrainings": "",
+    "APIAuthentication": "http://208.109.10.234:81/PortalGateway/api/Authentication/ValidateApps",
+    "IISFolder": ""
   },
   "scripts": {
     "start": "react-scripts start",
