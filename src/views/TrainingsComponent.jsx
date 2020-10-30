@@ -1,4 +1,3 @@
-
 import React, { Component, useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import './TrainingsComponent.scss';
@@ -6,28 +5,9 @@ import image from '../image/tobio.jpg';
 import Modal from 'react-modal';
 import trainingAPI from '../API/trainingAPI';
 import { ErrorMessage, Formik, Form, Field } from 'formik';
-import { TextField } from '@material-ui/core';
 Modal.setAppElement('#root');
 
 const Trainings = () => {
-
-    // useEffect(() => {
-    //     const getTrainingData = async () => {
-    //         const trainingDataResponse = await fetch('http://208.109.10.234:81/Training-scheduling/api/Trainings');
-    //         const jsonResponse = trainingDataResponse.json();
-    //         console.log(jsonResponse);
-    //     }
-    //     getTrainingData();
-    // }, [])
-
-    // useEffect(() => {
-    //     async function fetchData() {
-    //         const res = await axios.post('Training-scheduling/api/Trainings')
-    //         console.log(res);
-    //         return res;
-    //     }
-    //     fetchData();
-    // }, [])
 
     const [addTrainingModal, setAddTrainingModal] = useState(false)
     const [addScheduleModal, setAddScheduleModal] = useState(false)
@@ -36,10 +16,10 @@ const Trainings = () => {
     const [trainingDetailsData, setTrainingDetailsData] = useState([
         {
             Details: {
-                ID: '',
                 CODE: '',
-                TRAINING_TITLE: '',
+                ID: '',
                 INSERT_DATE: '',
+                TRAINING_TITLE: '',
                 STATUS: '',
                 TRAINING_IMAGE: '',
                 TRAINING_DETAILS: ''
@@ -54,7 +34,6 @@ const Trainings = () => {
         }
     ])
 
-
     const [formTrainingPrerequisiteData, setFormTrainingPrerequisiteData] = useState([
         {
             Count_id: '',
@@ -63,18 +42,9 @@ const Trainings = () => {
         }
     ])
 
-    // const { Training_Title, preRequisite, Training_Details } = formTrainingData;
-
-    // const { Count_id, Training_Id, Required_Training_Id } = formTrainingPrerequisiteData;
-
     const onChangeTraining = e => setTrainingDetailsData({ ...trainingDetailsData, [e.target.value]: e.target.value })
 
     const onChangePrerequisite = f => setFormTrainingPrerequisiteData({ ...formTrainingPrerequisiteData, [f.target.value]: f.target.value })
-
-    // const onSubmit = e => {
-    //     e.preventDefault();
-    //     addNewTraining(formTrainingData, formTrainingPrerequisiteData)
-    // }
 
     const getTrainingData = () => {
         trainingAPI().then(results => {
@@ -101,37 +71,7 @@ const Trainings = () => {
         }
     }
 
-
-
-    // const [formScheduleData, setFormScheduleData] = useState({
-    //     Training_Title: '',
-    //     preRequisite: '',
-    //     startDate: '',
-    //     endDate: '',
-    //     startTime: '',
-    //     endTime: '',
-    //     siteName: '',
-    //     room: '',
-    //     maxcapacity: '',
-    //     address: '',
-    //     country: '',
-    //     Training_Details: ''
-    // })
-
-    // const { trainingForm, handleSubmit , errors } = useForm();
-
-    // const onSubmitTraining = (data) => {
-    //     console.log(data)
-    // }
-
-    // const { startDate, endDate, startTime, endTime, siteName, room, maxcapacity, address, country } = formScheduleData;
-
-
-
-
-    let { id, code, trainingTitle, insertDate, status, trainingImage, trainingDetails } = this.trainingDetailsData;
     return (
-
         <div className="training-page">
             <h1>Trainings</h1>
             <div className="border-btm"></div>
@@ -181,7 +121,7 @@ const Trainings = () => {
                                         <div className="info">
                                             <div>
                                                 <label>{obj.Details.TRAINING_TITLE}</label>
-                                                <small>{obj.Details.TRAINING_DETAILS}</small>
+                                                <small>obj.Details.TRAINING_DETAILS</small>
                                             </div>
                                         </div>
                                     </li>
@@ -203,49 +143,6 @@ const Trainings = () => {
                                     <div className="add-training-title">
                                         <h4>Training Information</h4>
                                     </div>
-
-                                    <Formik initialValues={{ id, code, trainingTitle, insertDate, status, trainingImage, trainingDetails }}
-                                        onSubmit={data => {
-                                            console.log(data);
-                                        }}>
-                                        {({ values, errors, status, touched , handleChange , handleBlur,handleSubmit }) => {
-                                            <form>
-                                                <div className={"form-group" + (errors.trainingTitle && touched.trainingTitle ? 'errorInput' : '')}>
-                                                    <span>Training title</span>
-                                                    <Field type="text" className={"form-control input"} autoComplete="off" name="trainingTitle" placeholder="Training title 101" required />
-                                                    <TextField value={values.id} onChange={handleChange} onBlur={handleBlur}/>
-                                                </div>
-
-                                                <div className="errorMessages">
-                                                    <ErrorMessage name="trainingTitle" component="span" className="tag is-danger is-light" />
-                                                </div>
-
-                                                <div className={"form-group" + (errors.preRequisite && touched.preRequisite ? 'errorInput' : '')}>
-                                                    <span>Pre - requisite</span>
-                                                    <Field type="text" className="form-control" name="preRequisite" placeholder="Training title 101" required />
-                                                </div>
-
-                                                <div className="errorMessages">
-                                                    <ErrorMessage name="trainingTitle" component="span" className="tag is-danger is-light" />
-                                                </div>
-
-                                                <div className={"form-group" + (errors.preRequisite && touched.preRequisite ? 'errorInput' : '')}>
-                                                    <span>Description</span>
-                                                    <select className="form-control" name="trainingDetails" id="">
-                                                        <option value="">Training title 101</option>
-                                                    </select>
-                                                </div>
-
-                                                <div className="errorMessages">
-                                                    <ErrorMessage name="trainingDetails" component="span" className="tag is-danger is-light" />
-                                                </div>
-
-                                                <div className="add-training-button">
-                                                    <button className="btn btn-danger">Cancel</button>
-                                                    <button className="btn btn-primary">Submit</button>
-                                                </div>
-                                            </form>
-                                        }}</Formik>
                                 </div>
                             </div>
                         </Modal>
@@ -392,22 +289,22 @@ const Trainings = () => {
                                     trainingDetailsData && trainingDetailsData.map((obj, index2) =>
                                         <li key={index2}>
                                             <div className="schedule-date">
-                                                <span>{obj.schedules[0]?.schedule.DATE_START}</span>
+                                                <span>date_start</span>
                                             </div>
                                             <div className="schedule-time-desc">
                                                 <div className="schedule-time">
-                                                    <span>{obj.schedules[0]?.schedule.TIME_START}</span>
-                                                    <p>{obj.schedules[0]?.schedule.TIME_END}</p>
+                                                    <span>time_start</span>
+                                                    <p>time_end</p>
                                                 </div>
                                                 <div className="schedule-first-border">
 
                                                 </div>
                                                 <div className="schedule-desc">
                                                     <div className="schedule-name-position">
-                                                        <span>{obj.schedules[0]?.schedule.INSTRUCTOR},{obj.schedules[0]?.schedule.INSTRUCTOR_TITLE}</span>
+                                                        <span>instructor_title</span>
                                                     </div>
                                                     <div className="schedule-location">
-                                                        <span>{obj.schedules[0]?.location.CAPACITY} at {obj.schedules[0]?.location.SITE}, {obj.schedules[0]?.location.ROOM}</span>
+                                                        <span>capacity at site, room</span>
                                                     </div>
                                                 </div>
                                             </div>
