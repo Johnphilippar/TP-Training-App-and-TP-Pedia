@@ -1,48 +1,89 @@
 import React, { useState, useEffect } from 'react';
 import './CalendarComponent.scss' ;
 import { CalendarModalComponent } from '../components/Calendar/CalendarModalComponent';
+import Axios from 'axios'
 import moment from 'moment';
+import config from '../../package.json';
+import { get } from '../../node_modules/react-hook-form';
     
 function CalendarComponent() {
     const [modalShow, setModalShow] = useState(false);
     const [startMonth, setStartMonth] = useState(moment().format('MMMM YYYY'));
-    const [getSelectedDate, setSelectedDate] = useState({});
+    const [getSelectedDate, setSelectedDate] = useState(moment("2020-10-29").format('MMMM DD, YYYY'));
+    const [calendarDate, setCalendarDate] = useState([]);
 
+    const getCalendarDate = (yearMonth) =>{ 
+        Axios.get(config.configuration.APITrainings + "/Calendar/"+yearMonth+"-10").then(result => { 
+            setCalendarDate(result.data);
 
+        }).catch(e => {
+            console.log(e);
+        }); 
+    }
+    
 
-    const dates = [];
-    const getDates = dates => {
-        let content = []; 
-        let start = moment(startMonth).startOf('month').format('YYYY-MM-DD');
-        let end = moment(startMonth).endOf('month').format('YYYY-MM-DD'); 
-        let dayAWeek = moment(start).day(); 
-        for(let i = 0; i < dayAWeek; i++){
-            content.push(<div className="number"></div>);
-        } 
-        for(let m = moment(start); m.isSameOrBefore(end); m.add(1, 'days')){
-            const x = m.format('MMMM DD YYYY');
-            content.push( 
-                    <div className="number" onClick={()=>{
-                        setModalShow(true)
-                        setSelectedDate(x)
-                     }}>{m.date()}  
-                        <ul>
-                                <div className="li-sched-blue">
-                                    <li className="training" >Training 101</li>
-                                    <li className="time">8:00PM - 10:00PM</li>
-                                </div>
+    useEffect(()=>{
+        getCalendarDate(startMonth);
+    },[])
 
-                                <div className="li-sched-green">
-                                    <li className="training">Training 101</li>
-                                    <li className="time">8:00PM - 10:00PM</li>
-                                </div> 
-                        </ul> 
-                    </div>
-            )
+    
+     
+    const getScheduledTraining = (day) => { 
+        let scheduleConten = [];
+        if(calendarDate){
+            if(calendarDate[day]){
+                let obj = JSON.parse(JSON.stringify(calendarDate[day])).Schedules; 
+                for(let sc=0; sc<obj.length; sc++){
+                    scheduleConten.push(
+                        <div className="li-sched-green">
+                            <li className="training">{obj[sc].TRAINING_TITLE}</li>
+                            <li className="time">{moment(obj[sc].TIME_START).format("h:mm a") + " - " + moment(obj[sc].TIME_END).format("h:mm a")}</li>
+                        </div> 
+                    );
+                }
+            }
         }
-        return content;
+        return scheduleConten;
     }
 
+    const getDayContainerItem  = (cdate) => {
+        let dateObject = JSON.parse(JSON.stringify(cdate));
+        let day = moment(dateObject.date).format("DD");
+        let result = [];
+        if(day == "01"){
+
+            let start = moment(dateObject.date).format('YYYY-MM-DD');
+            let dayAWeek = moment(start).day();  
+            for(let i = 0; i < dayAWeek; i++){
+                result.push(<div className="number"></div>);
+            } 
+        }
+
+         result.push(<div className="number" onClick={()=>{
+                        setModalShow(true)
+                        setSelectedDate(moment(dateObject.date).format('MMMM DD, YYYY'))
+                    }}>{day}  
+                        <ul>
+                                {
+                                   getScheduledTraining(parseInt(day) - 1)  
+                                }
+                        </ul> 
+                    </div>)
+        return result;
+    }
+
+    
+    const moveToNextMonth = () => {
+        let newSelectedYearMonth  = moment(startMonth).add(1, 'month').format('MMMM YYYY');
+        setStartMonth(newSelectedYearMonth);
+        getCalendarDate(moment(newSelectedYearMonth).format("YYYY-MM"));   
+    }
+
+    const moveToPreviousMonth = () => {
+        let newSelectedYearMonth  = moment(startMonth).subtract(1, 'month').format('MMMM YYYY');
+        setStartMonth(newSelectedYearMonth);
+        getCalendarDate(moment(newSelectedYearMonth).format("YYYY-MM"));  
+    }
 
     return(
         <div className="calendar">
@@ -53,11 +94,11 @@ function CalendarComponent() {
                     <div className="m-w"> 
                         <div className="month">
                             <button type="button">
-                                <span class="material-icons" onClick={()=>setStartMonth(moment(startMonth).subtract(1, 'month').format('MMMM YYYY'))}>keyboard_arrow_left</span>
+                                <span class="material-icons" onClick={moveToPreviousMonth}>keyboard_arrow_left</span>
                             </button>
                             <span>{startMonth}</span>
                             <button type="button">
-                                <span class="material-icons" onClick={() => setStartMonth(moment(startMonth).add(1, 'month').format('MMMM YYYY'))}>keyboard_arrow_right</span>
+                                <span class="material-icons" onClick={moveToNextMonth}>keyboard_arrow_right</span>
                             </button>
                         </div>
                     </div>
@@ -73,17 +114,22 @@ function CalendarComponent() {
                     <span>SATURDAY</span>
                 </div>
                 <div className="date">
-                        {getDates(dates)}
+                        {
+                            calendarDate.map(
+                                cdate => getDayContainerItem(cdate)
+                            ) 
+                        }
                 </div>
 
-       {modalShow && <CalendarModalComponent
+        <CalendarModalComponent
        setModalShow = {setModalShow}
        getSelectedDate = {getSelectedDate}
-       />}  
+       />  
          </div>
     )
 }
 
+ 
 export default CalendarComponent;
 
                         

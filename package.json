@@ -24,10 +24,10 @@
     "redux": "^4.0.5"
   },
   "configuration": {
-    "APITrainings": "",
+    "APITrainings": "http://208.109.10.234:81/training-scheduling/api",
     "APIAuthentication": "http://208.109.10.234:81/PortalGateway/api/Authentication/ValidateApps",
     "IISFolder": "",
-    "TRAINING_IMAGE_PATH": ""
+    "TRAINING_IMAGE_PATH": "http://208.109.10.234:81/training-scheduling/medias/"
   },
   "scripts": {
     "start": "react-scripts start",

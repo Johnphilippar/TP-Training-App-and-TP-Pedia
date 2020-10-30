@@ -14,36 +14,59 @@ export class CalendarModalComponent extends Component {
                      <span className="month-date">{this.props.getSelectedDate}</span>
 
                     <div className="modal-body">
-                        <div className="week">
-                            <span>S</span>
-                            <span>M</span>
-                            <span>T</span>
-                            <span>W</span>
-                            <span>T</span>
-                            <span>F</span>
-                            <span>S</span>
+
+                        <div className="week-date">
+                        
+                            <div className="leftButton">
+
+                                <button type="button" className="button-date-left">
+                                    <span className="material-icons">keyboard_arrow_left</span>
+                                </button>
+
+                            </div>
+
+                            <div className="midContent">
+
+                                <div className="weekModal">
+                                    <span>S</span>
+                                    <span>M</span>
+                                    <span>T</span>
+                                    <span>W</span>
+                                    <span>T</span>
+                                    <span>F</span>
+                                    <span>S</span>
+                                </div>
+
+                                <div className="dateModal">  
+                                        <span>9</span>
+                                        <span>10</span>
+                                        <span>11</span>
+                                        <span>12</span>
+                                        <span>13</span>
+                                        <span>14</span>
+                                        <span>15</span>
+                                        <span>16</span>
+                                        <span>17</span>
+                                        <span>11</span>
+                                        <span>12</span>
+                                        <span>13</span>
+                                        <span>14</span>
+                                        <span>15</span>
+                                </div>
+
+                            </div>
+
+                            <div className="rightButton">
+                            
+                                <button type="button" className="button-date-right">
+                                    <span className="material-icons">keyboard_arrow_right</span>
+                                </button>   
+
+                            </div>
                         </div>
 
 
-                        <div className="date">
 
-                            <button type="button" className="button-date-left">
-                                <span className="material-icons">keyboard_arrow_left</span>
-                            </button>
-                                
-                                <span>9</span>
-                                <span>10</span>
-                                <span>11</span>
-                                <span>12</span>
-                                <span>13</span>
-                                <span>14</span>
-                                <span>15</span>
-                                
-                            <button type="button" className="button-date-right">
-                                <span className="material-icons">keyboard_arrow_right</span>
-                            </button>   
-
-                        </div>
 
                         <span className="time">10:00 AM</span>
                         <div className="div-part-one">
