@@ -34,7 +34,7 @@
             font-size: 24px;
             line-height: 28px;
             text-align: left;
-            left: 44px;
+            padding-left: 16px;
         }
 
         .close-btn{
@@ -54,17 +54,19 @@
 
 
             .week-date{
-                width: 492px !important;
+                width: 432px !important;
                 height: auto;
                 display: flex;
+                margin-bottom: 16px;
 
                 .rightButton{
                     width: 30px;
-                    height: 60px;
+                    height: 70px;
+                    z-index: 1;
 
                     .button-date-right{
                         width: 30px;
-                        height: 60px;
+                        height: 70px;
                         border: 0px;
                         box-shadow: none !important;
                         outline: none !important;
@@ -75,11 +77,12 @@
 
                 .leftButton{
                     width: 30px;
-                    height: 60px;
+                    height: 70px;
+                    z-index: 1;
 
                     .button-date-left{
                         width: 30px;
-                        height: 60px;
+                        height: 70px;
                         border: 0px;
                         box-shadow: none !important;
                         outline: none !important;
@@ -87,8 +90,8 @@
                 }
 
                 .midContent{
-                    width:432px;
-                    height: 60px;
+                    width:402px;
+                    height: 70px;
 
                     .weekModal{
                         width: 100%;
@@ -108,23 +111,58 @@
                         }
                     }
                     .dateModal{
-                        width: 432px !important;
-                        height: 30px;
+                        width: 402px !important;
+                        height: 40px;
                         font-family: 'Roboto', sans-serif;
                         font-weight: 400px;
-                        display: flex; 
-                        position: relative; 
+                        display: flex;  
+                        overflow-x: hidden;
+                        overflow-y: hidden;
+                        
+
+                        .item-container{
+                            width: 100%; 
+                            display: flex; 
+                            position: relative;  
+                            height: 40px;
+                            transition: margin-left 0.75s;
+                        }
 
                         span{
-                            width:61.7px !important;
+                            width:57.4px !important;
                             text-align: center;
-                            height: 30px;
-                            color: #2E2E2E;
-                            font-weight: 500;
-                            font-size: 16px;
+                            height: 40px;
                             padding-top: 4px;
                             position: absolute;
                             background: #ffffff;
+                            display: flex;
+
+                            small{
+                                width: 30px;
+                                height: 30px;
+                                text-align: center;
+                                margin: auto;
+                                text-align: center;
+                                padding-top: 3px;
+                                font-weight: 500;
+                                cursor: pointer;
+                                color: #2E2E2E;
+                                font-weight: 500;
+                                font-size: 16px;
+                            }
+
+                            small:hover{
+                                border-radius: 50%;
+                                background-color: #2F80ED !important;
+                                color: #f1f1f1;
+                            }
+                        }
+
+                        .active-day{
+                            border-radius: 50%;
+                            background-color: #2F80ED !important;
+                            color: #f1f1f1;
+                            
                         }
                     }
 

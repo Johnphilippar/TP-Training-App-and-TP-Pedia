@@ -121,10 +121,7 @@ function CalendarComponent() {
                         }
                 </div>
 
-        <CalendarModalComponent
-       setModalShow = {setModalShow}
-       getSelectedDate = {getSelectedDate}
-       />  
+                {modalShow && <CalendarModalComponent  setModalShow = {setModalShow} getSelectedDate = {getSelectedDate} />  }
          </div>
     )
 }

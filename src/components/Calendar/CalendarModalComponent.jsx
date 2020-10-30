@@ -4,8 +4,36 @@ import './CalendarModalComponent.scss'
 export class CalendarModalComponent extends Component {
     constructor(props){
         super(props);
+        this.state ={
+            dateItemLocation : 0
+        }
 
+        this.onTriggerNext = this.onTriggerNext.bind(this);
+        this.onTriggerPrev = this.onTriggerPrev.bind(this);
     }
+
+    getDateItems(){
+        let result = []; 
+        for(let x=1;x<=31;x++){
+            result.push(<span style={{left: ((57.4* (x - 1))+"px")}}>
+                <small className={(x==3 ? "active-day":"") }>{x}</small>
+            </span>);
+        }
+        return result;
+    }
+
+    onTriggerNext(){ 
+        if(this.state.dateItemLocation != 4){
+            this.setState({dateItemLocation : (this.state.dateItemLocation + 1)});
+        }
+    }
+    onTriggerPrev(){
+        if(this.state.dateItemLocation != 0){ 
+            this.setState({dateItemLocation : (this.state.dateItemLocation - 1)});
+        }
+     
+    }
+
     render() {
         return (
             <div className="modal-bg">
@@ -19,7 +47,7 @@ export class CalendarModalComponent extends Component {
                         
                             <div className="leftButton">
 
-                                <button type="button" className="button-date-left">
+                                <button type="button" className="button-date-left" onClick={this.onTriggerPrev}>
                                     <span className="material-icons">keyboard_arrow_left</span>
                                 </button>
 
@@ -32,33 +60,31 @@ export class CalendarModalComponent extends Component {
                                     <span>M</span>
                                     <span>T</span>
                                     <span>W</span>
-                                    <span>T</span>
+                                    <span>TH</span>
                                     <span>F</span>
                                     <span>S</span>
                                 </div>
 
                                 <div className="dateModal">  
-                                        <span>9</span>
-                                        <span>10</span>
-                                        <span>11</span>
-                                        <span>12</span>
-                                        <span>13</span>
-                                        <span>14</span>
-                                        <span>15</span>
-                                        <span>16</span>
-                                        <span>17</span>
-                                        <span>11</span>
-                                        <span>12</span>
-                                        <span>13</span>
-                                        <span>14</span>
-                                        <span>15</span>
+                                        {/* <span style={{left:"0px"}}>9</span>
+                                        <span style={{left:"61.7px"}}>10</span>
+                                        <span style={{left:"123.4px"}}>11</span>
+                                        <span style={{left:"185.1px"}}>12</span>
+                                        <span style={{left:"123.4px"}}>13</span>
+                                        <span> style={{left:"123.4px"}}14</span>
+                                        <span style={{left:"123.4px"}}>15</span>  */}
+                                        <div className="item-container" style={{marginLeft: "-"+(this.state.dateItemLocation * 402) +"px" }}>
+                                            {
+                                                this.getDateItems()
+                                            }
+                                        </div>
                                 </div>
 
                             </div>
 
                             <div className="rightButton">
                             
-                                <button type="button" className="button-date-right">
+                                <button type="button" className="button-date-right" onClick={this.onTriggerNext}>
                                     <span className="material-icons">keyboard_arrow_right</span>
                                 </button>   
 
