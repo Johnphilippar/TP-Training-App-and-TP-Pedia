@@ -5,6 +5,8 @@ import './TrainingsComponent.scss';
 import image from '../image/tobio.jpg';
 import Modal from 'react-modal';
 import trainingAPI from '../API/trainingAPI';
+import { ErrorMessage, Formik, Form, Field } from 'formik';
+import { TextField } from '@material-ui/core';
 Modal.setAppElement('#root');
 
 const Trainings = () => {
@@ -31,7 +33,26 @@ const Trainings = () => {
     const [addScheduleModal, setAddScheduleModal] = useState(false)
     const [editTrainingModal, setEditTrainingModal] = useState(false)
 
-    const [trainingDetailsData, setTrainingDetailsData] = useState([])
+    const [trainingDetailsData, setTrainingDetailsData] = useState([
+        {
+            Details: {
+                ID: '',
+                CODE: '',
+                TRAINING_TITLE: '',
+                INSERT_DATE: '',
+                STATUS: '',
+                TRAINING_IMAGE: '',
+                TRAINING_DETAILS: ''
+            },
+            id: '',
+            code: '',
+            trainingTitle: '',
+            insertDate: '',
+            status: '',
+            trainingImage: '',
+            trainingDetails: ''
+        }
+    ])
 
 
     const [formTrainingPrerequisiteData, setFormTrainingPrerequisiteData] = useState([
@@ -68,6 +89,18 @@ const Trainings = () => {
         getTrainingData()
     }, [])
 
+    const onSubmitTrainingForm = (data) => {
+        let params = {
+            ID: data.id,
+            CODE: data.code,
+            TRAINING_TITLE: data.trainingTitle,
+            INSERT_DATE: data.insertDate,
+            STATUS: data.status,
+            TRAINING_IMAGE: data.trainingImage,
+            TRAINING_DETAILS: data.trainingDetails
+        }
+    }
+
 
 
     // const [formScheduleData, setFormScheduleData] = useState({
@@ -96,7 +129,7 @@ const Trainings = () => {
 
 
 
-
+    let { id, code, trainingTitle, insertDate, status, trainingImage, trainingDetails } = this.trainingDetailsData;
     return (
 
         <div className="training-page">
@@ -170,34 +203,49 @@ const Trainings = () => {
                                     <div className="add-training-title">
                                         <h4>Training Information</h4>
                                     </div>
-                                    <form action="">
-                                        <div className="form-group">
-                                            <span>Training title</span>
-                                            <input type="text" className="form-control" placeholder="Training title 101" required />
-                                        </div>
 
-                                        <div className="form-group">
-                                            <span>Pre - requisite</span>
-                                            <input type="text" className="form-control" placeholder="Training title 101" required />
-                                        </div>
+                                    <Formik initialValues={{ id, code, trainingTitle, insertDate, status, trainingImage, trainingDetails }}
+                                        onSubmit={data => {
+                                            console.log(data);
+                                        }}>
+                                        {({ values, errors, status, touched , handleChange , handleBlur,handleSubmit }) => {
+                                            <form>
+                                                <div className={"form-group" + (errors.trainingTitle && touched.trainingTitle ? 'errorInput' : '')}>
+                                                    <span>Training title</span>
+                                                    <Field type="text" className={"form-control input"} autoComplete="off" name="trainingTitle" placeholder="Training title 101" required />
+                                                    <TextField value={values.id} onChange={handleChange} onBlur={handleBlur}/>
+                                                </div>
 
-                                        <div className="form-group">
-                                            <span>Description</span>
-                                            <select className="form-control" name="" id="">
-                                                <option value="">Training title 101</option>
-                                            </select>
-                                        </div>
+                                                <div className="errorMessages">
+                                                    <ErrorMessage name="trainingTitle" component="span" className="tag is-danger is-light" />
+                                                </div>
 
-                                        <div className="form-group">
-                                            <span>Training title</span>
-                                            <input type="text" className="form-control" placeholder="Training title 101" />
-                                        </div>
+                                                <div className={"form-group" + (errors.preRequisite && touched.preRequisite ? 'errorInput' : '')}>
+                                                    <span>Pre - requisite</span>
+                                                    <Field type="text" className="form-control" name="preRequisite" placeholder="Training title 101" required />
+                                                </div>
 
-                                        <div className="add-training-button">
-                                            <button className="btn btn-danger">Cancel</button>
-                                            <button className="btn btn-primary">Submit</button>
-                                        </div>
-                                    </form>
+                                                <div className="errorMessages">
+                                                    <ErrorMessage name="trainingTitle" component="span" className="tag is-danger is-light" />
+                                                </div>
+
+                                                <div className={"form-group" + (errors.preRequisite && touched.preRequisite ? 'errorInput' : '')}>
+                                                    <span>Description</span>
+                                                    <select className="form-control" name="trainingDetails" id="">
+                                                        <option value="">Training title 101</option>
+                                                    </select>
+                                                </div>
+
+                                                <div className="errorMessages">
+                                                    <ErrorMessage name="trainingDetails" component="span" className="tag is-danger is-light" />
+                                                </div>
+
+                                                <div className="add-training-button">
+                                                    <button className="btn btn-danger">Cancel</button>
+                                                    <button className="btn btn-primary">Submit</button>
+                                                </div>
+                                            </form>
+                                        }}</Formik>
                                 </div>
                             </div>
                         </Modal>
