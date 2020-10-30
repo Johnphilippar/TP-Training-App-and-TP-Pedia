@@ -1,0 +1,179 @@
+@keyframes modalAnimation{
+    from{
+        opacity: 0;
+        margin-top: -50px;
+    }
+    to{
+        opacity: 1;
+        margin-top: 0px;
+    }
+}
+.modal-bg{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto;   
+    top: 0px;
+    left: 0px;
+
+    .modal-content{
+
+        width: 532px !important;
+        height : 670px !important; 
+        padding: 20px;
+        left: calc(45vw - 150px);
+        animation: modalAnimation 0.75s;
+        box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+
+        .month-date{
+            font-family: 'Roboto', sans-serif;
+            font-style: normal;
+            font-weight: 500;
+            font-size: 24px;
+            line-height: 28px;
+            text-align: left;
+            left: 44px;
+        }
+
+        .close-btn{
+            color: #99A6B6;
+            float: right;
+            font-size: 24px;
+        }
+        .close-btn:hover, .close-btn:focus{
+            color: #000000;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    
+        .modal-body{
+            width: 100%;
+            margin-bottom: 1em;
+
+            .time{
+                text-align: left;
+                font-family: 'Roboto', sans-serif;
+            }
+            .date{
+                display: grid; 
+                grid-template-columns: 1fr 1fr  1fr  1fr  1fr  1fr  1fr 1fr 1fr;
+                grid-area: auto;
+                font-family: 'Roboto', sans-serif; 
+                margin: 0.5em;
+                
+                
+                .button-date-left{
+                    padding: 0px;
+                    float: left;
+                    margin:0px;
+                    background-color: #2F80ED;
+                    color: #ffffff;
+                    border-radius: 10px;
+                    border-style: none;
+                }
+                .button-date-right{
+                    float: right;
+                    background-color: #2F80ED;
+                    color: #ffffff;
+                    padding: 0px;
+                    border-radius: 10px;
+                    border-style: none;
+    
+                
+                }
+            }
+            .week{
+                display: grid; 
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr; 
+                font-family: 'Roboto', sans-serif;
+                font-weight: 400px;
+            }
+            
+            .div-part-one{
+                background-color: #EDEAFF;
+                height: 132px;
+                width: 459px;
+                left: 35px;
+                top: 309px;
+                border-radius: 9px;
+                margin-bottom: 10px;
+
+                span{
+                    color: #8A7BF8;
+                    font-size: 13px;
+                    font-family: 'Roboto', sans-serif;
+                }
+                .training-part-one{
+                    font-size: 18px;
+                    font-weight: 500px;
+                    padding:20px;
+                    float: left;
+                }
+                .training-date-one{
+                    
+                    
+                }
+                .training-time-one{
+                    width: 150px;
+                    height: 15px;
+                    float: right;
+                    right: 50px;
+                    padding:20px;
+                }
+            }
+
+            .div-part-two{
+                background-color: #E3F8EF;
+                height: 132px;
+                width: 459px;
+                left: 35px;
+                top: 450px;
+                border-radius: 9px;
+
+
+                span{
+                    color:  #13C16C;
+                    font-size: 13px;
+
+                }
+                .training-part-two{
+                    font-size: 18px;
+                    font-weight: 500px;
+                    left: 50px;
+                }
+            }
+
+            .div-part-three{
+                background-color: #FFE5E7;
+                height: 132px;
+                width: 459px;
+                left: 35px;
+                top: 624px;
+                border-radius: 9px;
+
+                span{
+                    color: #CC0F35;
+                    font-size: 13px;
+                    font-family: 'Roboto', sans-serif;
+                    
+                  
+                }
+                .training-part-three{
+                    font-size: 18px;
+                    font-weight: 500px;
+                    left: 50px;
+                }
+            }
+
+            .time{
+                font-size: 14px;
+                color: #99A6B6;
+            }
+
+        }
+    }
+
+    
+}
