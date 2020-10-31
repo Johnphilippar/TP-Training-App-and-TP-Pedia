@@ -24,6 +24,7 @@
         height : 670px !important; 
         padding: 20px;
         left: calc(45vw - 150px);
+        top: 10vh;
         animation: modalAnimation 0.75s;
         box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
 
@@ -170,114 +171,232 @@
 
             }
 
-            .time{
-                text-align: left;
-                font-family: 'Roboto', sans-serif;
-            }
-            .date{
-                display: grid; 
-                grid-template-columns: 1fr 1fr  1fr  1fr  1fr  1fr  1fr 1fr 1fr;
-                grid-area: auto;
-                font-family: 'Roboto', sans-serif; 
-                margin: 0.5em;
-                
-                
-                .button-date-left{
-                    padding: 0px;
-                    float: left;
-                    margin:0px;
-                    background-color: #2F80ED;
-                    color: #ffffff;
-                    border-radius: 10px;
-                    border-style: none;
-                }
-                .button-date-right{
-                    float: right;
-                    background-color: #2F80ED;
-                    color: #ffffff;
-                    padding: 0px;
-                    border-radius: 10px;
-                    border-style: none;
+            .listSchedules{
+                width: 100%;
+                height: 450px;
+                padding: 0px;
+                list-style-type: none; 
+                overflow-y: auto;
+
+                li{
+                    width: 100%;
+                    height: auto;
+                    display: block;
+
+                    .time{
+                        width: 100%;
+                        text-align: left; 
+                        font-family: 'Roboto', sans-serif;
+                        display: block;
+                        padding-left: 12px;
+                    }
+
+                    .training-row-one{
+                        display: flex;
+                        width: 100%;
+                        text-align: left;
+                        span{
+                            display: block;
+                        }
+
+                        .training-part-one{
+                            width: 60%;
+                            text-align: left;
+                        }
+                    }
+
+
+                    .div-purple{
+                        background-color: #EDEAFF;
+                        height: auto;
+                        width: 100%; 
+                        border-radius: 9px;
+                        margin-bottom: 12px;
+                        padding: 16px;
+                        position: relative;
+                        display: block; 
+
+                        span{
+                            color: #8A7BF8;
+                            font-size: 13px;
+                            font-family: 'Roboto', sans-serif;
+                            display: block; 
+                        }
+                        .training-part-one{
+                            font-size: 16px;
+                            width: 70%;
+                            font-weight: 600px; 
+                            float: left;
+                            display: block; 
+                        } 
+                        .training-time-one{
+                            width: 30%; 
+                            float: right;  
+                            text-align: right;
+                            display: block; 
+                        }
+                        .training-date-one{
+                            color: #8A7BF8;
+                            font-size: 13px;
+                            font-family: 'Roboto', sans-serif;
+                            display: block;
+                            float: left;
+                            text-align: left;
+                            width: 100%;
+                            display: block; 
+                        }
     
-                
-                }
-            }
+                        .training-address-one{
+                            color: #8A7BF8;
+                            font-size: 13px;
+                            font-family: 'Roboto', sans-serif; 
+                            text-align: left;
+                            width: 100%;
+                            display: block; 
+                            margin-top: 32px;
+                        }
+                    }
+
+
+
+                    .div-green{
+                        background-color: #E3F8EF;
+                        height: auto;
+                        width: 100%; 
+                        border-radius: 9px;
+                        margin-bottom: 12px;
+                        padding: 16px;
+                        position: relative;
+                        display: block; 
+
+                        span{
+                            color: #13C16C;
+                            font-size: 13px;
+                            font-family: 'Roboto', sans-serif;
+                            display: block; 
+                        }
+                        .training-part-one{
+                            font-size: 16px;
+                            width: 70%;
+                            font-weight: 600px; 
+                            float: left;
+                            display: block; 
+                        } 
+                        .training-time-one{
+                            width: 30%; 
+                            float: right;  
+                            text-align: right;
+                            display: block; 
+                        }
+                        .training-date-one{
+                            color: #13C16C;
+                            font-size: 13px;
+                            font-family: 'Roboto', sans-serif;
+                            display: block;
+                            float: left;
+                            text-align: left;
+                            width: 100%;
+                            display: block; 
+                        }
+    
+                        .training-address-one{
+                            color: #13C16C;
+                            font-size: 13px;
+                            font-family: 'Roboto', sans-serif; 
+                            text-align: left;
+                            width: 100%;
+                            display: block; 
+                            margin-top: 32px;
+                        }
+                    }
+
+                    .div-red{
+                        background-color: #FFE5E7;
+                        height: auto;
+                        width: 100%; 
+                        border-radius: 9px;
+                        margin-bottom: 12px;
+                        padding: 16px;
+                        position: relative;
+                        display: block; 
+
+                        span{
+                            color: #CC0F35;
+                            font-size: 13px;
+                            font-family: 'Roboto', sans-serif;
+                            display: block; 
+                        }
+                        .training-part-one{
+                            font-size: 16px;
+                            width: 70%;
+                            font-weight: 600px; 
+                            float: left;
+                            display: block; 
+                        } 
+                        .training-time-one{
+                            width: 30%; 
+                            float: right;  
+                            text-align: right;
+                            display: block; 
+                        }
+                        .training-date-one{
+                            color: #CC0F35;
+                            font-size: 13px;
+                            font-family: 'Roboto', sans-serif;
+                            display: block;
+                            float: left;
+                            text-align: left;
+                            width: 100%;
+                            display: block; 
+                        }
+    
+                        .training-address-one{
+                            color: #CC0F35;
+                            font-size: 13px;
+                            font-family: 'Roboto', sans-serif; 
+                            text-align: left;
+                            width: 100%;
+                            display: block; 
+                            margin-top: 32px;
+                        }
+                    }
+
+                    // .date{
+                    //     display: grid; 
+                    //     grid-template-columns: 1fr 1fr  1fr  1fr  1fr  1fr  1fr 1fr 1fr;
+                    //     grid-area: auto;
+                    //     font-family: 'Roboto', sans-serif; 
+                    //     margin: 0.5em;
+                        
+                        
+                    //     .button-date-left{
+                    //         padding: 0px;
+                    //         float: left;
+                    //         margin:0px;
+                    //         background-color: #2F80ED;
+                    //         color: #ffffff;
+                    //         border-radius: 10px;
+                    //         border-style: none;
+                    //     }
+                    //     .button-date-right{
+                    //         float: right;
+                    //         background-color: #2F80ED;
+                    //         color: #ffffff;
+                    //         padding: 0px;
+                    //         border-radius: 10px;
+                    //         border-style: none;
             
-            .div-part-one{
-                background-color: #EDEAFF;
-                height: 132px;
-                width: 459px;
-                left: 35px;
-                top: 309px;
-                border-radius: 9px;
-                margin-bottom: 10px;
+                        
+                    //     }
+                    // }
 
-                span{
-                    color: #8A7BF8;
-                    font-size: 13px;
-                    font-family: 'Roboto', sans-serif;
-                }
-                .training-part-one{
-                    font-size: 18px;
-                    font-weight: 500px;
-                    padding:20px;
-                    float: left;
-                }
-                .training-date-one{
-                    
-                    
-                }
-                .training-time-one{
-                    width: 150px;
-                    height: 15px;
-                    float: right;
-                    right: 50px;
-                    padding:20px;
                 }
             }
 
-            .div-part-two{
-                background-color: #E3F8EF;
-                height: 132px;
-                width: 459px;
-                left: 35px;
-                top: 450px;
-                border-radius: 9px;
 
+            
 
-                span{
-                    color:  #13C16C;
-                    font-size: 13px;
-
-                }
-                .training-part-two{
-                    font-size: 18px;
-                    font-weight: 500px;
-                    left: 50px;
-                }
-            }
-
-            .div-part-three{
-                background-color: #FFE5E7;
-                height: 132px;
-                width: 459px;
-                left: 35px;
-                top: 624px;
-                border-radius: 9px;
-
-                span{
-                    color: #CC0F35;
-                    font-size: 13px;
-                    font-family: 'Roboto', sans-serif;
-                    
-                  
-                }
-                .training-part-three{
-                    font-size: 18px;
-                    font-weight: 500px;
-                    left: 50px;
-                }
-            }
+ 
 
             .time{
                 font-size: 14px;

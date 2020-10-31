@@ -1,3 +1,4 @@
+import moment from 'moment';
 import React, { Component } from 'react'
 import './CalendarModalComponent.scss'
 
@@ -12,11 +13,25 @@ export class CalendarModalComponent extends Component {
         this.onTriggerPrev = this.onTriggerPrev.bind(this);
     }
 
+    componentDidMount(){
+        if(parseInt(moment(this.props.getSelectedDate).format("DD"))<=7){
+            this.setState({dateItemLocation : 0});
+        }else if(parseInt(moment(this.props.getSelectedDate).format("DD"))<=14){
+            this.setState({dateItemLocation : 1});
+        }else if(parseInt(moment(this.props.getSelectedDate).format("DD"))<=21){
+            this.setState({dateItemLocation : 2});
+        }else if(parseInt(moment(this.props.getSelectedDate).format("DD"))<=28){
+            this.setState({dateItemLocation : 3});
+        }else{
+            this.setState({dateItemLocation : 4});
+        }
+    }
+
     getDateItems(){
-        let result = []; 
-        for(let x=1;x<=31;x++){
-            result.push(<span style={{left: ((57.4* (x - 1))+"px")}}>
-                <small className={(x==3 ? "active-day":"") }>{x}</small>
+        let result = [];  
+        for(let x=1;x<=31;x++){ 
+            result.push(<span style={{left: ((57.4* (x - 1))+"px")}}> 
+                <small className={(x===parseInt(moment(this.props.getSelectedDate).format("DD")) ? "active-day":"") }>{x}</small>
             </span>);
         }
         return result;
@@ -92,30 +107,44 @@ export class CalendarModalComponent extends Component {
                         </div>
 
 
+                        <ul className="listSchedules">
+                            <li>
+                                <span className="time">10:00 AM</span>
+                                <div className="div-purple">
+                                    <div className="training-row-one">
+                                        <span className="training-part-one">WFM Training 101</span>
+                                        <span className="training-time-one">10:00 PM - 12:00 AM</span>
+                                    </div> 
+                                    <span className="training-date-one">{this.props.getSelectedDate}</span>
+                                    <span className="training-address-one">at Octagon Centre, Complete Address..</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span className="time">10:00 AM</span>
+                                <div className="div-green">
+                                    <div className="training-row-one">
+                                        <span className="training-part-one">WFM Training 101</span>
+                                        <span className="training-time-one">10:00 PM - 12:00 AM</span>
+                                    </div> 
+                                    <span className="training-date-one">{this.props.getSelectedDate}</span>
+                                    <span className="training-address-one">at Octagon Centre, Complete Address..</span>
+                                </div>
+                            </li>
+                            <li>
+                                <span className="time">10:00 AM</span>
+                                <div className="div-red">
+                                    <div className="training-row-one">
+                                        <span className="training-part-one">WFM Training 101</span>
+                                        <span className="training-time-one">10:00 PM - 12:00 AM</span>
+                                    </div> 
+                                    <span className="training-date-one">{this.props.getSelectedDate}</span>
+                                    <span className="training-address-one">at Octagon Centre, Complete Address..</span>
+                                </div>
+                            </li>
+                        </ul>                    
 
 
-                        <span className="time">10:00 AM</span>
-                        <div className="div-part-one">
-                            <span className="training-part-one">WFM Training 101</span>
-                            <span className="training-date-one">{this.props.getSelectedDate}</span>
-                            <span className="training-time-one">10:00 PM - 12:00 AM</span>
-                            <span className="training-address-one">at Octagon Centre, Complete Address..</span>
-                        </div>
-
-                        <div className="div-part-two">
-                            <span className="training-part-two">WFM Training 101</span>
-                            <span>{this.props.getSelectedDate}</span>
-                            <span>10:00 PM - 12:00 AM</span>
-                            <span>at Octagon Centre, Complete Address..</span>
-                        </div>
-
-                        <span className="time">10:00 AM</span>
-                        <div className="div-part-three">
-                            <span className="training-part-three">WFM Training 101</span>
-                            <span>{this.props.getSelectedDate}</span>
-                            <span>10:00 PM - 12:00 AM</span>
-                            <span>at Octagon Centre, Complete Address..</span>
-                        </div>
+ 
 
                     </div>
                 </div>
