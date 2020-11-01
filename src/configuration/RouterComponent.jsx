@@ -6,6 +6,7 @@ import AuthenticatedRoute from './AuthenticatedRoute';
 import config from '../../package.json';
 import TrainingsComponent from '../views/TrainingsComponent';
 import './RouterComponent.scss'
+import AttendanceComponent from '../views/AttendanceComponent';
 class RouterComponent extends Component{
 
  
@@ -19,6 +20,7 @@ class RouterComponent extends Component{
                             <AuthenticatedRoute path={config.configuration.IISFolder + "/"} exact component={TrainingsComponent} />
                             <AuthenticatedRoute path={config.configuration.IISFolder + "/trainings"}  component={TrainingsComponent} />
                             <AuthenticatedRoute path={config.configuration.IISFolder + "/calendar/"}  component={CalendarComponent} />
+                            <AuthenticatedRoute path={config.configuration.IISFolder + "/attendance"}  component={AttendanceComponent} />
                         </div>
                     </>
                 </Router>
