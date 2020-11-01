@@ -1,8 +1,9 @@
 import interceptor from './-interceptor';
 
- const getTraining = async () => {
-    return await interceptor.authAxios().get('training-scheduling/api/Trainings')
+export const getTraining = async () => {
+    return await interceptor.authAxios().get('/Trainings')
 }
 
-
-export default getTraining;
+export const getTrainingList = async () => {
+    return await interceptor.authAxios().get('/Trainings/List')
+}

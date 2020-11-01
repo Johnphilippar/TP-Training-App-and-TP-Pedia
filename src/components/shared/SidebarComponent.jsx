@@ -8,9 +8,11 @@ class SidebarComponent extends Component{
         super(props);
         this.ChangeRoute =  this.ChangeRoute.bind(this);
     }
-
+    componentDidMount(){
+ 
+    }
     ChangeRoute(){
-        this.forceUpdate();
+        this.forceUpdate(); 
     }
     render(){
         return(
@@ -20,7 +22,8 @@ class SidebarComponent extends Component{
                         <img src="./favicon.ico" alt=""/>
                     </li>
                     <li> 
-                        <Link className={(window.location.pathname.split('/').indexOf("trainings") > -1 ?  'active-li':'')} onClick={this.ChangeRoute}
+                        <Link className={((window.location.pathname.split('/').indexOf("trainings") > -1 ||
+                        window.location.pathname == "/") ?  'active-li':'')} onClick={this.ChangeRoute}
                          to={config.configuration.IISFolder + "/trainings"}>
                             <div>
                                 <span className="material-icons-outlined">model_training</span> 

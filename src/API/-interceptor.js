@@ -1,5 +1,5 @@
 import axios from 'axios';
-
+import * as packageConfig  from '../../package.json';
 class interceptor {
 
     constructor() {
@@ -8,7 +8,7 @@ class interceptor {
 
     authAxios() {
         return axios.create({
-            baseURL: 'http://208.109.10.234:81/',
+            baseURL: packageConfig.configuration.APITrainings,
             headers: {
                 Authorization: `Bearer ${window.localStorage.getItem('token')}`,
                 Accept: 'application/json',

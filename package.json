@@ -26,7 +26,7 @@
   "configuration": {
     "APITrainings": "http://208.109.10.234:81/training-scheduling/api",
     "APIAuthentication": "http://208.109.10.234:81/PortalGateway/api/Authentication/ValidateApps",
-    "IISFolder": "",
+    "IISFolder": "/training-scheduling",
     "TRAINING_IMAGE_PATH": "http://208.109.10.234:81/training-scheduling/medias/"
   },
   "scripts": {
