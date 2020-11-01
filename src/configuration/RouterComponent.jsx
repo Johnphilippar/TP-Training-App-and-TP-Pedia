@@ -16,8 +16,9 @@ class RouterComponent extends Component{
                     <>
                         <SidebarComponent/>
                         <div className="main">
-                            <AuthenticatedRoute path={config.configuration.IISFolder + "/trainings"} exact component={TrainingsComponent} />
-                            <AuthenticatedRoute path={config.configuration.IISFolder + "/calendar/"} exact component={CalendarComponent} />
+                            <AuthenticatedRoute path={config.configuration.IISFolder + "/"} exact component={TrainingsComponent} />
+                            <AuthenticatedRoute path={config.configuration.IISFolder + "/trainings"}  component={TrainingsComponent} />
+                            <AuthenticatedRoute path={config.configuration.IISFolder + "/calendar/"}  component={CalendarComponent} />
                         </div>
                     </>
                 </Router>

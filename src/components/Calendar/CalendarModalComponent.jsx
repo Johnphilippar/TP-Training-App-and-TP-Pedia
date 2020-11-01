@@ -80,14 +80,7 @@ export class CalendarModalComponent extends Component {
                                     <span>S</span>
                                 </div>
 
-                                <div className="dateModal">  
-                                        {/* <span style={{left:"0px"}}>9</span>
-                                        <span style={{left:"61.7px"}}>10</span>
-                                        <span style={{left:"123.4px"}}>11</span>
-                                        <span style={{left:"185.1px"}}>12</span>
-                                        <span style={{left:"123.4px"}}>13</span>
-                                        <span> style={{left:"123.4px"}}14</span>
-                                        <span style={{left:"123.4px"}}>15</span>  */}
+                                <div className="dateModal">   
                                         <div className="item-container" style={{marginLeft: "-"+(this.state.dateItemLocation * 402) +"px" }}>
                                             {
                                                 this.getDateItems()
