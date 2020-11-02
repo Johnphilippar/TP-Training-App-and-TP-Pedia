@@ -45,7 +45,8 @@ class SidebarComponent extends Component{
                         </Link>
                     </li>
                     <li> 
-                        <Link to={config.configuration.IISFolder + "/"}>
+                        <Link className={(window.location.pathname.split('/').indexOf("attendance") > -1 ?  'active-li':'')} 
+                        to={config.configuration.IISFolder + "/attendance"}>
                             <div>
                                 <span className="material-icons-outlined">model_training</span> 
                             </div>
