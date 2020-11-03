@@ -1,0 +1,37 @@
+.AttendanceComponent {
+    padding: 30px 35px 35px 35px;
+    text-align: left;
+    background-color: #f9f9f9;
+    height: 100vh;
+    .title-section {
+        .border-btm{
+            background-color: #2F80ED;
+            width: 75px;
+            height: 4px;
+        }
+        .filter-wrapper {
+            margin-top: 15px;
+            display: flex;
+            .from-control {
+                padding: 10px;
+                width: 200px;
+            }
+        }
+    }
+    .list-section {
+        display: block;
+        height: 85.5%;
+        overflow-y: auto;
+        margin-top: 10px;
+
+        .list-wrapper {
+            display: flex;
+            flex-flow: row;
+            flex-wrap: wrap;
+            .list-item {
+                padding: 13px 15px;
+                width: calc((100% / 5));
+            }
+        }
+    }    
+}

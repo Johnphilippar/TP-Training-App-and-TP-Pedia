@@ -1,0 +1,81 @@
+.TraningCardComponent {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+    background-color: white;
+    img {
+        border-radius: 9px 9px 0 0;
+        width: 100%;
+        height: 124px;
+    }
+    .traning-wrapper {
+        padding: 15px;
+        .traning-title {
+            display: flex;
+            align-items: center;
+            img {
+                width: 35px;
+                height: 37px;
+            }
+            
+            .title-wrapper {
+                padding: 0 0 0 8px;
+                p {
+                    padding: 0;
+                    margin: 0;
+                    font-family: Roboto;
+                    font-style: normal;
+                    font-weight: 600;
+                    font-size: 14px;
+    
+                    &:last-child {
+                        font-weight: normal;
+                        font-size: 11px;
+                        color: #828282;
+                    }
+                }
+            }
+        }
+        .traning-description {
+            color: #333333;
+            font-family: Roboto;
+            font-style: normal;
+            font-size: 11px;
+            margin-top: 7px;
+            .traning-datetime {
+                padding: 8px 0 0 0;
+                p {
+                    span {
+                        font-weight: bold;
+                    }
+                }
+            }
+            .participants {
+                padding: 7px 0;
+                font-weight: bold;
+            }
+
+            $font-size: 11px;
+            $line-height: 1.4;
+            $lines-to-show: 5;
+
+            .description {
+                display: block; /* Fallback for non-webkit */
+                display: -webkit-box;
+                max-width: 100%;
+                height: calc($font-size*$line-height*$lines-to-show - 2px); /* Fallback for non-webkit */
+                margin: 0 auto;
+                font-size: $font-size;
+                line-height: $line-height;
+                -webkit-line-clamp: $lines-to-show;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            p {
+                padding: 0;
+                margin: 0;
+            }
+        }
+    }
+    
+}
