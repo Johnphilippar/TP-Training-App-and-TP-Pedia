@@ -1,0 +1,156 @@
+.ViewTraningComponent {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    background: #00000030;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 13px;
+    font-family: Roboto;
+    .view-training-wrapper {
+        background-color: white;
+        width: 80%;
+        padding: 56px;
+        position: relative;
+        height: 100%;
+        float: right;
+        color: #333333;
+        i {
+            color: #828282;
+            position: absolute;
+            margin-top: 25px;
+            margin-right: 25px;
+            font-size: 2em;
+            top: 0;
+            right: 0;
+            cursor: pointer;
+        }
+        p {
+            font-family: Roboto;
+            font-style: normal;
+            font-weight: normal;
+            
+        } 
+        .view-training-subtitle{
+            font-size: 14px;
+            color: #828282;
+            margin-top: -13px;
+        } 
+        .view-traning-datetime {
+            p {
+                padding: 0;
+                margin: 0;
+                span {
+                    font-weight: bold;
+                }
+            }
+        }
+        .view-traning-participants {
+            font-weight: bold;
+            padding: 12px 0;
+        }
+        ul {
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-flow: row;
+            flex-wrap: wrap;
+            list-style: none;
+
+            li {
+                font-weight: 500;
+                padding: 10px 21px 25px 21px;
+            }
+            .is-selected {
+                span {
+                    border-bottom: 3px solid #2F80ED;
+                }
+            }
+        }
+        table {
+            width: 100%;
+            text-align: center;
+            border-collapse: collapse;
+            font-style: normal;
+            &, tr, td, th {
+                border: 1px solid #E0E0E0;
+            }
+            th {
+                font-weight: 500;
+                padding: 14px;
+                color: #828282;
+            }
+            td {
+                font-size: 12px;
+                padding: 12px;
+                &:last-child{
+                    padding: 5px 1px;
+                    position: relative;
+                    width: 170px;
+                }
+                .view-traning-actions {
+                    padding: 6px 15px;
+                    position: absolute;
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    top: 0;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    .view-traning-container {
+                        display: flex;
+                        align-items: center;
+                        margin: 0 auto;
+                        width: 100%;
+                        height: 101%;
+                        border: 1px solid;
+                        .view-traning-inner-wrapper {
+                            display: flex;
+                            align-items: center;
+                            border: 1px solid;
+                            width: 100%;
+                            height: 100%;
+                            cursor: pointer;
+                            p {
+                                font-size: 12px;
+                                padding: 0;
+                                margin: 0;
+                                width: 100%;
+                            }
+                        }
+                    }
+
+                    .is-present {
+                        border: 1px solid #2F80ED;
+                        .present {
+                            color: #fff;
+                            background-color: #2F80ED;
+                            border: 1px solid #2F80ED;
+                        }
+                        .absent {
+                            border: 1px solid #2F80ED;
+                            background-color: #fff;
+                        }
+                    }
+
+                    .is-absent {
+                        border: 1px solid #EB5757;
+                        .absent{
+                            color: #fff;
+                            background-color: #EB5757;
+                            border: 1px solid#EB5757;
+                        }
+                        .present  {
+                            border: 1px solid #EB5757;
+                            background-color: #fff;
+                        }
+                    }
+                }
+                
+            }
+        }
+    }
+}
