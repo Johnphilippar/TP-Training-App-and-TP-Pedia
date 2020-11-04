@@ -18,31 +18,12 @@ export default function Trainings() {
             schedules: []
         }
     ]);
-    const [trainingFormData, setTrainingFormData] = useState([
-        {
-            formTrainingTitle: '',
-            formTrainingDesc: '',
-            formTrainingImg: '',
-            formTrainingPrereq: ''
-        }
-    ])
 
     const [arrayIndex, setArrayIndex] = useState(0);
     const [loading, setLoading] = useState(true);
 
-    const [formTrainingPrerequisiteData, setFormTrainingPrerequisiteData] = useState([
-        {
-            Training_Id: '',
-            Required_Training_Id: ''
-        }
-    ])
-
     const [addScheduleModal, setAddScheduleModal] = useState(false)
     // const [editTrainingModal, setEditTrainingModal] = useState(false)
-
-    const onChangeTraining = e => setTrainingDetailsData({ ...trainingDetailsData, [e.target.value]: e.target.value })
-
-    const onChangePrerequisite = f => setFormTrainingPrerequisiteData({ ...formTrainingPrerequisiteData, [f.target.value]: f.target.value })
 
     const getTrainingData = () => {
         getTraining().then(results => {
@@ -50,7 +31,7 @@ export default function Trainings() {
             console.log(results.data)
         }).catch(e => {
             console.log(e)
-        }) 
+        })
         setLoading(false)
     }
 
@@ -62,23 +43,16 @@ export default function Trainings() {
         setArrayIndex(index);
     };
 
-    const [addTrainingModal, setAddTrainingModal] = useState(false) 
-
-
+    const [addTrainingModal, setAddTrainingModal] = useState(false)
 
     const closeModal = () => {
         setAddTrainingModal(false);
-        // setNewTrainingTitle('');
-        // setNewTrainingPrereq('');
-        // setNewTrainingDesc('');
-        // setNewTrainingImg('');
     }
 
- 
     if (loading) {
         return null
     }
- 
+
     return (
         <div className="training-page">
             <h1>Trainings</h1>
@@ -88,7 +62,7 @@ export default function Trainings() {
                     <button className="custom-add-button" onClick={() => setAddTrainingModal(true)}>Click here to add new training</button>
                     <Modal isOpen={addTrainingModal}>
 
-                    <FormNewTrainingComponent/>
+                        <FormNewTrainingComponent close={closeModal} />
 
 
 

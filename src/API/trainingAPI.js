@@ -11,3 +11,7 @@ export const getTrainingList = async () => {
 export const postTraining = (trn) => {
     return interceptor.authAxios().post('/Trainings', trn)
 }
+
+export const putTraining = (trn) => {
+    return interceptor.authAxios().put('/Trainings', trn)
+}
