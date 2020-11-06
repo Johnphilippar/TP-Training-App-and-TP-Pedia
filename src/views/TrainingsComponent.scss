@@ -238,6 +238,11 @@
                         }
                         .schedule-time-desc{
                             display: flex;
+                            button {
+                                height: 40px;
+                                margin-top: auto;
+                                margin-bottom: auto;
+                            }
                             .schedule-time{
                                 span{
                                     color: #333333;

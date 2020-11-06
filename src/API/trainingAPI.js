@@ -15,3 +15,15 @@ export const postTraining = (trn) => {
 export const putTraining = (trn) => {
     return interceptor.authAxios().put('/Trainings', trn)
 }
+
+export const getLocations = async () => {
+    return await interceptor.authAxios().get('/Locations')
+}
+
+export const putSchedule = (sch) => {
+    return interceptor.authAxios().put('/Schedule', sch)
+}
+
+export const postSchedule = (sch) => {
+    return interceptor.authAxios().post('/Schedule', sch)
+}

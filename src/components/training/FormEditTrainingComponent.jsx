@@ -23,6 +23,7 @@ export default function FormEditTrainingComponent(props) {
 
         console.log(data.formFile)
         if (data.formFile) {
+            console.log('triggered')
             fd.append("formFile", data.formFile, data.formFile.name);
         }
 

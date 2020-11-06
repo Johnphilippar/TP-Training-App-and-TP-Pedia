@@ -4,7 +4,7 @@ import image from '../image/tobio.jpg';
 import Modal from 'react-modal';
 import { getTraining, getTrainingList, postTraining } from '../API/trainingAPI';
 import HeroComponent from '../components/TrainingFeatureComponents/HeroComponent';
-import ScheduleListComponent from '../components/TrainingFeatureComponents/ScheduleListComponent';
+// import ScheduleListComponent from '../components/TrainingFeatureComponents/ScheduleListComponent';
 import config from '../../package.json'
 import FormNewTrainingComponent from '../components/training/FormNewTrainingComponent';
 Modal.setAppElement('#root');
@@ -61,51 +61,7 @@ export default function Trainings() {
                 <div className="trainings-section">
                     <button className="custom-add-button" onClick={() => setAddTrainingModal(true)}>Click here to add new training</button>
                     <Modal isOpen={addTrainingModal}>
-
                         <FormNewTrainingComponent close={closeModal} />
-
-
-
-                        {/* <div className="add-new-training-modal">
-                            <img src={image} alt="" />
-                            <div className="add-training-form">
-                                <div className="add-training-title">
-                                    <h4>Training Information</h4>
-                                </div>
-                                <form>
-                                    <div className="form-group">
-                                        <span>Training title</span>
-                                        <input type="text" className="form-control" name="Training_Title" value={newTrainingTitle} onChange={(e) => setNewTrainingTitle(e.target.value)} />
-                                    </div>
-
-                                    <div className="form-group">
-                                        <span>Pre - requisite</span>
-                                        <select className="form-control" name="" id="" onChange={(e) => setNewTrainingPrereq(e.target.value)}>
-                                            <option value=""></option>
-                                            {trainingList.map((list) =>
-                                                <option value={list.ID} key={list.ID}>{list.TRAINING_TITLE}</option>
-                                            )}
-
-                                        </select>
-                                    </div>
-
-                                    <div className="form-group">
-                                        <span>Training Image</span>
-                                        <input type="file" className="form-control" name="Training_Details" onChange={(e) => setNewTrainingImg(e.target.value)} />
-                                    </div>
-
-                                    <div className="form-group">
-                                        <span>Description</span>
-                                        <input type="text" className="form-control" name="Training_Details" value={newTrainingDesc} onChange={(e) => setNewTrainingDesc(e.target.value)} />
-                                    </div>
-
-                                    <div className="add-training-button">
-                                        <button className="btn btn-danger" onClick={closeModal}>Cancel</button>
-                                        <button className="btn btn-primary" onClick={handleSubmit}>Submit</button>
-                                    </div>
-                                </form>
-                            </div>
-                        </div> */}
                     </Modal>
 
                     <div className="list-trainings">
@@ -131,9 +87,9 @@ export default function Trainings() {
 
                     <HeroComponent details={trainingDetailsData[arrayIndex]} />
 
-                    <div className="trainings-body-main-schedule">
+                    {/* <div className="trainings-body-main-schedule">
                         <ScheduleListComponent schedules={trainingDetailsData[arrayIndex]} />
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>

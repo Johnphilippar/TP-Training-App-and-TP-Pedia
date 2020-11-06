@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react'
 import Modal from 'react-modal';
 import config from '../../../package.json';
 import FormEditTrainingComponent from '../training/FormEditTrainingComponent';
+import ScheduleListComponent from './ScheduleListComponent'
+import * as apiTraining from '../../API/trainingAPI';
 Modal.setAppElement('#root');
 
 export default function HeroComponent(props) {
@@ -9,6 +11,19 @@ export default function HeroComponent(props) {
     const closeEditModal = () => {
         setEditTrainingModal(false);
     }
+    const [locationList, setLocationList] = useState([])
+
+    const getLocationList = () => {
+        apiTraining.getLocations().then(result => {
+            setLocationList(result.data)
+        }).catch(e => {
+            console.log(e)
+        })
+    }
+
+    useEffect(() => {
+        getLocationList()
+    }, [])
 
     return (
         <>
@@ -19,15 +34,6 @@ export default function HeroComponent(props) {
                 </button>
                 <Modal isOpen={editTrainingModal}>
                     <FormEditTrainingComponent trn={props.details} closeModal={closeEditModal} />
-
-                    {/* <div className="add-new-training-modal">
-                        <img src={`${config.configuration.TRAINING_IMAGE_PATH}${props.details.Details.TRAINING_IMAGE}`} alt="" />
-                        <div className="add-training-form">
-                            <div className="add-training-title">
-                                <h4>Training Information</h4>
-                            </div>
-                        </div>
-                    </div> */}
                 </Modal>
             </div>
             <div className="trainings-body-code">
@@ -44,6 +50,10 @@ export default function HeroComponent(props) {
                 <div className="trainings-body-desc">
                     <p>{props.details?.Details.TRAINING_DETAILS}</p>
                 </div>
+            </div>
+
+            <div className="trainings-body-main-schedule">
+                <ScheduleListComponent sch={props.details} loc={locationList} />
             </div>
         </>
     )
