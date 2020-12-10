@@ -59,6 +59,9 @@ export default function FormEditTrainingComponent(props) {
         <div className="add-new-training-modal">
             <img src={`${config.configuration.TRAINING_IMAGE_PATH}${props.trn.Details.TRAINING_IMAGE}`} alt="" />
             <div className="add-training-form">
+                <div className="add-training-title">
+                    <h4>Trainings Information</h4>
+                </div>
                 <Formik initialValues={editFormData}
                     onSubmit={(values) => handleEdit(values)}
                     validateOnChange={true}
@@ -69,46 +72,47 @@ export default function FormEditTrainingComponent(props) {
                     {
                         (formProps) => (
                             <Form>
-                                <div>
-                                    <Field type="text" name="Training_Title" />
+                                <div className="form-group">
                                     <label>Training Title</label>
+                                    <Field className="form-control" type="text" name="Training_Title" />
                                 </div>
 
-                                <div>
-                                    <Field type="text" name="Training_Details" />
+                                <div className="form-group">
                                     <label>Training Description</label>
+                                    <Field className="form-control" type="text" name="Training_Details" />
                                 </div>
 
-                                <div>
-                                    <Field as="select" name="Status">
+                                <div className="form-group">
+                                    <label>Status</label>
+                                    <Field className="form-control" as="select" name="Status">
                                         <option value="1">Active</option>
                                         <option value="0">Inactive</option>
                                     </Field>
-                                    <label>Status</label>
                                 </div>
 
-                                <div>
-                                    <Field type="file" name="formFile" value={editFormData.formFile} onChange={(e) => {
+                                <div className="form-group">
+                                    <label>Training Image</label>
+                                    <Field className="form-control" type="file" name="formFile" value={editFormData.formFile} onChange={(e) => {
                                         formProps.setFieldValue("formFile", e.target.files[0])
                                     }} />
-                                    <label>Training Image</label>
                                 </div>
 
-                                <div>
-                                    <Field as="select" name="PrerequisiteId">
+                                <div className="form-group">
+                                    <Field className="form-control" as="select" name="PrerequisiteId">
                                         <option value="">--No Prerequisite--</option>
                                         {trainingList.map((list) =>
                                             <option value={list.ID} key={list.ID}>{list.TRAINING_TITLE}</option>
                                         )}
                                     </Field>
                                 </div>
-
-                                <button type="submit">
-                                    <p>SUBMIT</p>
-                                </button>
-                                <button type="button" onClick={props.closeModal}>
-                                    <p>CLOSE</p>
-                                </button>
+                                <div className="add-training-button">
+                                    <button className="btn btn-primary" type="submit">
+                                        Submit
+                                    </button>
+                                    <button className="btn btn-danger" type="button" onClick={props.closeModal}>
+                                        Close
+                                    </button>
+                                </div>
                             </Form>
                         )
                     }

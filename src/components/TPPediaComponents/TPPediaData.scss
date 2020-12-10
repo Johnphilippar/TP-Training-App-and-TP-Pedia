@@ -1,0 +1,77 @@
+.tppedia-container-data{
+    height: 100vh;
+    overflow: hidden;
+    .tppedia-header-data{
+        padding-top: 20px;
+        height: 160px;
+        background: #3E2E87;
+        .tppedia-title{
+            font-size: 26px;
+            color: #ffffff;
+        }
+        p{            
+            font-size: 16px;
+            color: #FFFFFF;
+        }
+        .tppedia-search{
+            .tppedia-search-icon{
+                position: absolute;
+                top: 105px;
+                left: 682px;
+            }
+            img{
+                height: 24px;
+                width: 24px;
+                opacity: 50%;
+            }
+        }
+        .form-control{
+            width: 480px;
+            border-radius: 20px;
+            padding-left: 44px;
+            margin: 0 auto !important;
+        }
+    }
+    .tppedia-main-body-data{
+        height: 100%;
+        display: block;
+        padding: 50px;
+        .details{
+            display: flex;
+            img{
+                object-fit: contain;
+                height: 180px;
+                width: 500px;
+            }
+            .user-data{
+                text-align: left;
+                span{
+                    margin: 0 20px;
+                    font-size: 14px;
+                }
+            }
+            .item-title{
+                span{
+                    font-size: 20px;
+                    font-weight: 600;
+                    letter-spacing: 1px;
+                    line-height: 26px;
+                }
+            }
+            .actions{
+                .btn{
+                    font-size: 1.5rem;
+                    margin: 0 4px;
+                }
+            }
+        }
+        .description{
+            margin-top: 40px;
+            height: 450px;
+            overflow-y: auto;
+            text-align: left;
+            letter-spacing: 0.5px;
+            font-size: 12px;
+        }
+    }
+}

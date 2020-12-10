@@ -1,0 +1,136 @@
+.tppedia-container-searchpage{
+    height: 100vh;
+    overflow: hidden;
+
+    .tppedia-header-searchpage{
+        padding-top: 20px;
+        height: 160px;
+        background: #3E2E87;
+        .tppedia-title{
+            font-size: 26px;
+            color: #ffffff;
+        }
+        p{            
+            font-size: 16px;
+            color: #FFFFFF;
+        }
+        .tppedia-search{
+            .tppedia-search-icon{
+                position: absolute;
+                top: 105px;
+                left: 682px;
+            }
+            img{
+                height: 24px;
+                width: 24px;
+                opacity: 50%;
+            }
+        }
+        .form-control{
+            width: 480px;
+            border-radius: 20px;
+            padding-left: 44px;
+            margin: 0 auto !important;
+        }
+    }
+    .tppedia-main-body-searchpage{
+        height: 100%;
+        display: flex;
+        .tppedia-search-list{
+            height: 83vh;
+            width: 450px;
+            overflow-y: auto;
+            .tppedia-item{
+                padding-top: 20px;
+                ul{
+                    padding: 0 24px;
+                    list-style-type: none;
+                    li{
+                        background-color: #ffffff;
+                        margin-right: 0 !important;
+                        padding: 0;
+
+                        .item-li{
+                            padding: 20px !important;
+                            display: flex;
+                            height: 150px;
+                            width: 400px;
+                        }
+                        .tppedia-item-img{
+                            margin: auto  0;
+                            margin-right: 12px;
+                            
+                            img{
+                                object-fit: contain;
+                                height: 80px;
+                                width: 160px;
+                            }
+                        }
+                        .tppedia-item-title{
+                            text-align: left;
+                            font-size: 12px;
+                            margin: auto;
+                            .item-title{
+                                color: #0066FF !important;
+                                font-size: 16px;
+                            }
+                            span{
+                            display: block;
+                            font-style: normal;
+                            line-height: 16px;
+                            color: #1e1e1e;
+                            font-weight: 600;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .tppedia-feature-item-body{
+            height: 100%;
+            width: 75%;
+            .tppedia-feature-item{
+                padding: 40px;
+                .tppedia-feature-item-image{
+                    img{
+                        object-fit: contain;
+                        height: 300px;
+                        width: 100%;
+                    }
+                }
+                .tppedia-feature-item-details{
+                    margin-top: 20px;
+                    text-align: left;
+                    .item-title{
+                        color: #0066FF !important;
+                        font-weight: 600;
+                        font-size: 20px;
+                    }
+                    span{
+                        display: block;
+                    }
+                    .item-description{
+                        max-width: 100%;
+                        -webkit-line-clamp: 4;
+                        -webkit-box-orient: vertical;
+                        display: -webkit-box;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+.item-li:hover{
+    background-color: #3E2E87;
+    border-radius: 8px;
+    .tppedia-item-title{
+        span{
+            color: #ffffff !important;
+        }
+    }
+}

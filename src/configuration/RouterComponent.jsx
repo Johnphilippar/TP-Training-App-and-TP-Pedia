@@ -7,6 +7,9 @@ import config from '../../package.json';
 import TrainingsComponent from '../views/TrainingsComponent';
 import './RouterComponent.scss'
 import AttendanceComponent from '../views/AttendanceComponent';
+import TPPediaComponent from '../views/TPPediaComponent';
+import TPPediaSearchPage from '../components/TPPediaComponents/TPPediaSearchPage';
+import TPPediaData from '../components/TPPediaComponents/TPPediaData';
 class RouterComponent extends Component{
 
  
@@ -21,6 +24,9 @@ class RouterComponent extends Component{
                             <AuthenticatedRoute path={config.configuration.IISFolder + "/trainings"}  component={TrainingsComponent} />
                             <AuthenticatedRoute path={config.configuration.IISFolder + "/calendar/"}  component={CalendarComponent} />
                             <AuthenticatedRoute path={config.configuration.IISFolder + "/attendance"}  component={AttendanceComponent} />
+                            <AuthenticatedRoute path={config.configuration.IISFolder + "/tppedia"}  component={TPPediaComponent} />
+                            <AuthenticatedRoute path={config.configuration.IISFolder + "/tppediasearchpage"}  component={TPPediaSearchPage} />
+                            <AuthenticatedRoute path={config.configuration.IISFolder + "/tppediadata"}  component={TPPediaData} />
                         </div>
                     </>
                 </Router>

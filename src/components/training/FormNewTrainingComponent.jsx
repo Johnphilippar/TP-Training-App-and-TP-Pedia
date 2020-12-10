@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as apiTraining from '../../API/trainingAPI';
+import image from '../../image/tobio.jpg';
 
 
 class FormNewTrainingComponent extends Component {
@@ -47,53 +48,61 @@ class FormNewTrainingComponent extends Component {
 
     render() {
         return (
-            <div>
-                <Formik initialValues={this.state.formData}
-                    onSubmit={(values) => this.handleSubmit(values)}
-                    validateOnChange={true}
-                    validateOnBlur={false}
-                    //   validationSchema={ReviewSchema}
-                    enableReinitialize={true}
-                >
-                    {
-                        (formProps) => (
-                            <Form>
-                                <div>
-                                    <Field type="text" name="title" />
-                                    <label>Training Title</label>
-                                </div>
+            <div className="add-new-training-modal">
+                <div className="add-training-form">
+                    <div className="add-training-title">
+                        <h4>Trainings Information</h4>
+                    </div>
+                    <Formik initialValues={this.state.formData}
+                        onSubmit={(values) => this.handleSubmit(values)}
+                        validateOnChange={true}
+                        validateOnBlur={false}
+                        //   validationSchema={ReviewSchema}
+                        enableReinitialize={true}
+                    >
+                        {
+                            (formProps) => (
+                                <Form>
+                                    <div className="form-group">
+                                        <label>Training Title</label>
+                                        <Field className="form-control" type="text" name="title" />
+                                    </div>
 
-                                <div>
-                                    <Field as="select" name="prerequisite" >
-                                        <option value=""></option>
-                                        {this.state.trainingList.map((list) =>
-                                            <option value={list.ID} key={list.ID}>{list.TRAINING_TITLE}</option>
-                                        )}
-                                    </Field>
-                                    <label>Training Prerequisite</label>
-                                </div>
+                                    <div className="form-group">
+                                        <label>Training Prerequisite</label>
+                                        <Field className="form-control" as="select" name="prerequisite" >
+                                            <option value=""></option>
+                                            {this.state.trainingList.map((list) =>
+                                                <option value={list.ID} key={list.ID}>{list.TRAINING_TITLE}</option>
+                                            )}
+                                        </Field>
+                                    </div>
 
-                                <div>
-                                    <Field type="file" name="image" value={this.state.formData.image} onChange={(e) => {
-                                        formProps.setFieldValue("image", e.target.files[0])
-                                    }} />
-                                    <label>Training Image</label>
-                                </div>
+                                    <div className="form-group">
+                                        <label>Training Image</label>
+                                        <Field className="form-control" type="file" name="image" value={this.state.formData.image} onChange={(e) => {
+                                            formProps.setFieldValue("image", e.target.files[0])
+                                        }} />
+                                    </div>
 
-                                <div>
-                                    <Field type="text" name="description" />
-                                    <label>Training Description</label>
-                                </div>
-                                <button type="submit">
-                                    <p>SUBMIT</p>
-                                </button>
-                                <button type="button" onClick={this.props.close}>
-                                    <p>CLOSE</p>
-                                </button>
-                            </Form>
-                        )
-                    }
-                </Formik>
+                                    <div className="form-group">
+                                        <label>Training Description</label>
+                                        <Field className="form-control" type="text" name="description" />
+                                    </div>
+                                    <div className="add-training-button">
+                                        <button className="btn btn-primary" type="submit">
+                                            Submit
+                                        </button>
+                                        <button className="btn btn-danger" type="button" onClick={this.props.close}>
+                                            Close
+                                        </button>
+                                    </div>
+                                </Form>
+                            )
+                        }
+                    </Formik>
+                </div>
+
             </div>
         )
     }
