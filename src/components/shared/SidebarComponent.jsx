@@ -33,7 +33,7 @@ class SidebarComponent extends Component {
                             </div>
                         </Link>
                     </li>
-                    {/* <li>
+                    <li>
                         <Link className={(window.location.pathname.split('/').indexOf("calendar") > -1 ? 'active-li' : '')}
                             onClick={this.ChangeRoute} to={config.configuration.IISFolder + "/calendar"}>
                             <div>
@@ -54,7 +54,7 @@ class SidebarComponent extends Component {
                                 <small>Attendance</small>
                             </div>
                         </Link>
-                    </li> */}
+                    </li>
                     <li>
                         <Link className={(window.location.pathname.split('/').indexOf("tppedia") > -1 ? 'active-li' : '')}
                             onClick={this.ChangeRoute} to={config.configuration.IISFolder + "/tppedia"}>

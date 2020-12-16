@@ -294,254 +294,253 @@
 }
 
 
-.ReactModal__Content{
-    width: 500px !important;
-    overflow-y: auto !important;
-    height: 650px;
-    margin: auto;
-    padding: 0 !important;
-    border-radius: 12px !important;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+// .ReactModal__Content{
+//     width: 500px !important;
+//     height: 550px;
+//     margin: auto;
+//     padding: 0 !important;
+//     border-radius: 12px !important;
+//     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
-    .add-new-training-modal{
-        img{
-            object-fit: contain;
-            height: 250px;
-        }
+//     .add-new-training-modal{
+//         img{
+//             object-fit: contain;
+//             height: 250px;
+//         }
         
-        .add-training-form{
-            height: 420px;
-            overflow-y: auto;
+//         .add-training-form{
+//             height: 480px;
 
-            .add-training-title{
-                padding: 20px 0;
-                height: 60px;
-                width: 100%;
-                background: #2F80ED;
-                text-align: center;
+//             .add-training-title{
+//                 padding: 20px 0;
+//                 height: 60px;
+//                 width: 100%;
+//                 background: #2F80ED;
+//                 text-align: center;
 
-                h4{
-                    color: #ffffff;
-                }
-            }
-            Form{
-                padding: 40px;
-            }
+//                 h4{
+//                     color: #ffffff;
+//                 }
+//             }
+//             Form{
+//                 padding: 40px;
+//             }
 
-            .form-group{
-                margin: 0;
-                span{
-                    font-size: 10px;
-                    line-height: 12px;
-                    color: #4f4f4f;
-                    font-weight: bold;
-                }
-                .form-control{
-                    font-size: 14px;
-                    line-height: 16px;
-                    color: #2e2e2e;
-                    font-weight: bold;
-                }
-            }
+//             .form-group{
+//                 margin: 0;
+//                 span{
+//                     font-size: 10px;
+//                     line-height: 12px;
+//                     color: #4f4f4f;
+//                     font-weight: bold;
+//                 }
+//                 .form-control{
+//                     font-size: 14px;
+//                     line-height: 16px;
+//                     color: #2e2e2e;
+//                     font-weight: bold;
+//                 }
+//             }
 
-            .add-training-button{
-                text-align: center;
-                margin-top: 50px;
+//             .add-training-button{
+//                 text-align: center;
+//                 margin-top: 20px;
                 
-                .cancel-button{
-                    margin-right: 12px;
-                    padding: 8px 20px;
-                    border-radius: 12px;
-                    font-size: 12px;
-                    line-height: 14px;
-                    text-align: center;
-                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-                    background: #EB5757;
-                    font-family: roboto;
-                    border: none;
-                    color: #ffffff;
-                    font-weight: normal;
-                    font-family: 'Roboto', sans-serif;
-                }
+                
+//                 .cancel-button{
+//                     margin-right: 12px;
+//                     padding: 8px 20px;
+//                     border-radius: 12px;
+//                     font-size: 12px;
+//                     line-height: 14px;
+//                     text-align: center;
+//                     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+//                     background: #EB5757;
+//                     font-family: roboto;
+//                     border: none;
+//                     color: #ffffff;
+//                     font-weight: normal;
+//                     font-family: 'Roboto', sans-serif;
+//                 }
 
-                .submit-button{
-                    margin-right: 12px;
-                    padding: 8px 20px;
-                    border-radius: 12px;
-                    font-size: 12px;
-                    line-height: 14px;
-                    text-align: center;
-                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-                    background: #EB5757;
-                    font-family: roboto;
-                    border: none;
-                    color: #ffffff;
-                    font-weight: normal;
-                    font-family: 'Roboto', sans-serif;
-                }
+//                 .submit-button{
+//                     margin-right: 12px;
+//                     padding: 8px 20px;
+//                     border-radius: 12px;
+//                     font-size: 12px;
+//                     line-height: 14px;
+//                     text-align: center;
+//                     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+//                     background: #EB5757;
+//                     font-family: roboto;
+//                     border: none;
+//                     color: #ffffff;
+//                     font-weight: normal;
+//                     font-family: 'Roboto', sans-serif;
+//                 }
 
-                .btn-danger{
-                    background: #EB5757;
-                    font-size: 12px;
-                    font-weight: normal;
-                    font-family: roboto;
-                    border-radius: 8px;
-                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-                    font-family: 'Roboto', sans-serif;
-                    width: 80px;
-                    height: 30px;
-                }
-                .btn-primary{
-                    margin-right: 12px;
-                    font-size: 12px;
-                    font-weight: normal;
-                    font-family: roboto;
-                    border-radius: 8px;
-                    background: #2F80ED;
-                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-                    font-family: 'Roboto', sans-serif;
-                    width: 80px;
-                    height: 30px;
-                }
-            }
+//                 .btn-danger{
+//                     background: #EB5757;
+//                     font-size: 12px;
+//                     font-weight: normal;
+//                     font-family: roboto;
+//                     border-radius: 8px;
+//                     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+//                     font-family: 'Roboto', sans-serif;
+//                     width: 80px;
+//                     height: 30px;
+//                 }
+//                 .btn-primary{
+//                     margin-right: 12px;
+//                     font-size: 12px;
+//                     font-weight: normal;
+//                     font-family: roboto;
+//                     border-radius: 8px;
+//                     background: #2F80ED;
+//                     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+//                     font-family: 'Roboto', sans-serif;
+//                     width: 80px;
+//                     height: 30px;
+//                 }
+//             }
 
-        }
-    }
+//         }
+//     }
 
-    .add-new-schedule-modal{
-        img{
-            height: 204px;
-            width: 100%;
-        }
+//     .add-new-schedule-modal{
+//         img{
+//             height: 204px;
+//             width: 100%;
+//         }
         
-        .add-schedule-form{
-            overflow-y: auto !important;
-            width: 500px;
-            height: 450px;
-            padding: 0 40px;
-            .add-schedule-title{
-                padding: 20px 0;
-                height: 60px;
-                width: 100%;
-                text-align: center;
+//         .add-schedule-form{
+//             overflow-y: auto !important;
+//             width: 500px;
+//             height: 350px !important;
+//             padding: 0 40px;
+//             .add-schedule-title{
+//                 padding: 20px 0;
+//                 height: 60px;
+//                 width: 100%;
+//                 text-align: center;
 
-                h4{
-                    color: #1e1e1e;
-                }
-            }
+//                 h4{
+//                     color: #1e1e1e;
+//                 }
+//             }
 
-            .form-group{
-                margin: 0;
-                span{
-                    font-size: 10px;
-                    line-height: 12px;
-                    color: #4F4F4F;
-                    font-weight: bold;
-                }
-                .form-control{
-                    font-size: 14px;
-                    line-height: 16px;
-                    color: #2e2e2e;
-                }
-            }
+//             .form-group{
+//                 margin: 0;
+//                 span{
+//                     font-size: 10px;
+//                     line-height: 12px;
+//                     color: #4F4F4F;
+//                     font-weight: bold;
+//                 }
+//                 .form-control{
+//                     font-size: 14px;
+//                     line-height: 16px;
+//                     color: #2e2e2e;
+//                 }
+//             }
 
-            .add-schedule-date-time{
-                .add-schedule-date{
-                    text-align: center;
-                    display: flex;
-                    .date-form{
-                        margin-right: 12px;
-                        .form-control{
-                            width: 200px;
-                            font-weight: normal;
-                        }
-                    }
-                }
-                .add-schedule-time{
-                    text-align: center;
-                    display: flex;
-                    .time-form{
-                        margin-right: 12px;
-                        .form-control{
-                            width: 200px;
-                            font-weight: normal;
-                        }
-                    }
-                }
-            }
+//             .add-schedule-date-time{
+//                 .add-schedule-date{
+//                     text-align: center;
+//                     display: flex;
+//                     .date-form{
+//                         margin-right: 12px;
+//                         .form-control{
+//                             width: 200px;
+//                             font-weight: normal;
+//                         }
+//                     }
+//                 }
+//                 .add-schedule-time{
+//                     text-align: center;
+//                     display: flex;
+//                     .time-form{
+//                         margin-right: 12px;
+//                         .form-control{
+//                             width: 200px;
+//                             font-weight: normal;
+//                         }
+//                     }
+//                 }
+//             }
 
-            .add-schedule-location{
+//             .add-schedule-location{
 
-                .add-schedule-location-title{
-                    padding: 12px 0;
-                    margin-top: 12px;
-                }
+//                 .add-schedule-location-title{
+//                     padding: 12px 0;
+//                     margin-top: 12px;
+//                 }
 
-            }
+//             }
 
-            .add-schedule-button{
-                text-align: right;
-                margin-top: 20px;
-                padding-bottom: 20px;
+//             .add-schedule-button{
+//                 text-align: right;
+//                 margin-top: 20px;
+//                 padding-bottom: 20px;
                 
-                .cancel-button{
-                    margin-right: 12px;
-                    padding: 8px 20px;
-                    border-radius: 12px;
-                    font-size: 12px;
-                    line-height: 14px;
-                    text-align: center;
-                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-                    background: #EB5757;
-                    font-family: roboto;
-                    border: none;
-                    color: #ffffff;
-                    font-weight: normal;
-                    font-family: 'Roboto', sans-serif;
-                }
+//                 .cancel-button{
+//                     margin-right: 12px;
+//                     padding: 8px 20px;
+//                     border-radius: 12px;
+//                     font-size: 12px;
+//                     line-height: 14px;
+//                     text-align: center;
+//                     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+//                     background: #EB5757;
+//                     font-family: roboto;
+//                     border: none;
+//                     color: #ffffff;
+//                     font-weight: normal;
+//                     font-family: 'Roboto', sans-serif;
+//                 }
 
-                .submit-button{
-                    margin-right: 12px;
-                    padding: 8px 20px;
-                    border-radius: 12px;
-                    font-size: 12px;
-                    line-height: 14px;
-                    text-align: center;
-                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-                    background: #EB5757;
-                    font-family: roboto;
-                    border: none;
-                    color: #ffffff;
-                    font-weight: normal;
-                    font-family: 'Roboto', sans-serif;
-                }
+//                 .submit-button{
+//                     margin-right: 12px;
+//                     padding: 8px 20px;
+//                     border-radius: 12px;
+//                     font-size: 12px;
+//                     line-height: 14px;
+//                     text-align: center;
+//                     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+//                     background: #EB5757;
+//                     font-family: roboto;
+//                     border: none;
+//                     color: #ffffff;
+//                     font-weight: normal;
+//                     font-family: 'Roboto', sans-serif;
+//                 }
 
-                .btn-danger{
-                    margin-right: 12px;
-                    background: #EB5757;
-                    font-size: 12px;
-                    font-weight: normal;
-                    font-family: roboto;
-                    width: 90px;
-                    padding: 8px 20px;
-                    border-radius: 8px;
-                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-                    font-family: 'Roboto', sans-serif;
-                }
-                .btn-primary{
-                    margin-right: 12px;
-                    font-size: 12px;
-                    font-weight: normal;
-                    padding: 8px 20px;
-                    width: 90px;
-                    font-family: 'Roboto', sans-serif;
-                    border-radius: 8px;
-                    background: #2F80ED;
-                    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-                }
-            }
+//                 .btn-danger{
+//                     margin-right: 12px;
+//                     background: #EB5757;
+//                     font-size: 12px;
+//                     font-weight: normal;
+//                     font-family: roboto;
+//                     width: 90px;
+//                     padding: 8px 20px;
+//                     border-radius: 8px;
+//                     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+//                     font-family: 'Roboto', sans-serif;
+//                 }
+//                 .btn-primary{
+//                     margin-right: 12px;
+//                     font-size: 12px;
+//                     font-weight: normal;
+//                     padding: 8px 20px;
+//                     width: 90px;
+//                     font-family: 'Roboto', sans-serif;
+//                     border-radius: 8px;
+//                     background: #2F80ED;
+//                     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+//                 }
+//             }
 
-        }
-    }
+//         }
+//     }
 
-}
+// }

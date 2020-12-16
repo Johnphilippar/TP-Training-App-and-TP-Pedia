@@ -2,16 +2,18 @@
     height: 100vh;
     overflow-y: hidden;
     .tppedia-add-article{
+        margin: 0;
         padding: 20px 20px 20px 20px;
         text-align: right;
+        background: #3E2E87;
         button{
-            background: #3E2E87;
+            background: #7356FB;
             height: 40px;
             width: 120px;
             border: none;
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             span{
-                color: #ffffff;
+                color: #1e1e1e;
                 font-style: medium;
                 font-size: 14px;
             }
@@ -20,15 +22,16 @@
     
     .tppedia-header{
         margin-top: -60px;
-        height: 136px;
-        background: #ffffff;
+        height: 140px;
+        background: #3E2E87;
         width: 100%;
         .tppedia-title{
             font-size: 26px;
+            color: #ffffff;
         }
         p{
             font-size: 16px;
-            color: #1e1e1e;
+            color: #ffffff;
         }
         .tppedia-search{
             .tppedia-search-icon{
@@ -52,21 +55,21 @@
     }
     .tppedia-main-body{
         height: 100%;
-        background: #3E2E87;
+        background: #ffffff;
 
         .swiper-container{
             padding: 40px 60px;
             width: 90vw;
             .tppedia-recent-upload{
                 height: 300px;
-                width: 370px;
+                width: 320px;
                 .tppedia-recent-upload-image{
-                    background: #ffffff;
+                    border-radius: 8px 8px 0 0;
                     height: 150px;
                     margin: 0;
                     img{
                         object-fit: contain;
-                        width: 350px;
+                        width: 300px;
                         height: 150px;
                     }
                 }
@@ -78,7 +81,7 @@
                         line-height: 19px;
                         letter-spacing: 2px;
                         text-decoration: none;
-                        color: #ffffff;
+                        color: #1e1e1e;
                     }
                 }
                 .tppedia-recent-upload-description{
@@ -100,7 +103,7 @@
                         line-height: 14px;
                         margin: 0;
                         text-decoration: none;
-                        color: #ffffff;
+                        color: #1e1e1e;
                     }
                 }
             }
@@ -116,19 +119,21 @@
                 font-size: 14px;
                 font-weight: normal;
                 line-height: 16px;
-                color: #ffffff;
+                color: #1e1e1e;
             }
         }
     }
 }
 
 .tppedia-recent-upload:hover{
-    background: #ffffff;
+    background: #7356FB;
+    box-shadow: 8px 6px 8px 2px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
     span{
-        color: #1e1e1e !important;
+        color: #ffffff !important;
     }
     p{
-        color: #1e1e1e !important;
+        color: #ffffff !important;
     }
 }
 
@@ -136,11 +141,16 @@
     
 .ReactModal__Content{
     overflow: hidden !important;
-    width: 50vw;
+    margin: auto;
+    width: 90vw;
+    height: 90vh;
+    padding: 0 !important;
+    border-radius: 20px !important;
     .ck{
         height: 200px;
     }
     .tppedia-form{
+        background: #ffffff;
         .form-title{
             padding: 28px 0;
             height: 90px;
@@ -157,22 +167,67 @@
         }
         .article-form{
             padding: 12px 40px;
+            .form-control{
+                font-size: 12px;
+            }
             .input-form{
-                margin-bottom: 20px;
-                span{
+                padding: 20px 20px;
+                display: flex;
+                border-radius: 12px;
+                label{
                     line-height: 20px;
+                    font-weight: 600;
+                    font-size: 14px;
                 }
                 .form-control{
                     height: auto;
+                    width: 370px;
+                }
+
+                .form{
+                    padding: 0 20px;
                 }
             }
         }
         .forms-action{
             text-align: center;
+            .submit-btn{
+                background: #3E2E87;
+                font-size: 12px;
+                width: 100px;
+                height: 36px;
+                color: #ffffff;
+                border-radius: 8px;
+                font-weight: 400;
+                line-height: 11.72px;
+                border: none;
+            }
+            .cancel-btn{
+                background: #E51E5C;
+                font-size: 12px;
+                width: 100px;
+                height: 36px;
+                color: #ffffff;
+                border-radius: 8px;
+                font-weight: 400;
+                line-height: 11.72px;
+                border: none;
+            }
         }
     }
 }
+.articletext{
+    height: 550px !important;
+    padding: 0 40px !important;
+}
 
-hr{
-    padding: 0 40px;
+.ck-content{
+    height: 450px !important;
+    font-size: 12px;
+}
+.fa-edit:before{
+    color: green;
+}
+.fa-trash-alt:before{
+    color: red;
 }

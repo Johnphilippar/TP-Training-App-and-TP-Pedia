@@ -1,10 +1,16 @@
-import React from 'react';
+import React , { useState } from 'react';
 import './TPPediaData.scss';
 import config from '../../../package.json';
 import searchIcon from '../../image/search-icon.png';
 import tpIcon from '../../image/tp-logo.png';
+import TPPediaForm from './TPPediaForm';
+import Modal from 'react-modal';
 
 export default function TPPediaData() {
+    const [editArticleModal, setEditArticleModal] = useState(false)
+    const closeModal = () => {
+        setEditArticleModal(false)
+    }
     return (
         <>
             <div className="tppedia-container-data">
@@ -30,9 +36,12 @@ export default function TPPediaData() {
                             <span>Position: Supervisor</span>
                         </div>
                         <div className="actions">
-                            <button className="btn primary">
+                            <button className="btn primary" onClick={() => setEditArticleModal(true)}>
                                 <i className="fas fa-edit"></i>
                             </button>
+                            <Modal isOpen={editArticleModal}>
+                                <TPPediaForm close={closeModal} />
+                            </Modal>
                             <button className="btn primary">
                                 <i className="fas fa-trash-alt"></i>
                             </button>

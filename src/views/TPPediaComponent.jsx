@@ -40,6 +40,30 @@ const data = [
         id: 5,
         articleName: 'Teleperformance',
         description: 'Teleperformance SE is an omnichannel company headquartered in France. The company provides customer acquisition, customer care, technical support, debt collection, social media,Teleperformance SE is an omnichannel company headquartered in France. The company provides customer acquisition, customer care, technical support, debt collection, social media,Teleperformance SE is an omnichannel company headquartered in France. The company provides customer acquisition, customer care, technical support, debt collection, social media,Teleperformance SE is an omnichannel company headquartered in France. The company provides customer acquisition, customer care, technical support, debt collection, social media,Teleperformance SE is an omnichannel company headquartered in France. The company provides customer acquisition, customer care, technical support, debt collection, social media,Teleperformance SE is an omnichannel company headquartered in France. The company provides customer acquisition, customer care, technical support, debt collection, social media,Teleperformance SE is an omnichannel company headquartered in France. The company provides customer acquisition, customer care, technical support, debt collection, social media,'
+    },{
+        id: 6,
+        articleName: 'Teleperformance',
+        description: 'Teleperformance SE is an omnichannel company headquartered in France. The company provides customer acquisition, customer care, technical support, debt collection, social media,'
+    },
+    {
+        id: 7,
+        articleName: 'Teleperformance',
+        description: 'Teleperformance SE is an omnichannel company headquartered in France. The company provides customer acquisition, customer care, technical support, debt collection, social media,'
+    },
+    {
+        id: 8,
+        articleName: 'Teleperformance',
+        description: 'Teleperformance SE is an omnichannel company headquartered in France. The company provides customer acquisition, customer care, technical support, debt collection, social media,'
+    },
+    {
+        id: 9,
+        articleName: 'Teleperformance',
+        description: 'Teleperformance SE is an omnichannel company headquartered in France. The company provides customer acquisition, customer care, technical support, debt collection, social media,'
+    },
+    {
+        id: 10,
+        articleName: 'Teleperformance',
+        description: 'Teleperformance SE is an omnichannel company headquartered in France. The company provides customer acquisition, customer care, technical support, debt collection, social media,Teleperformance SE is an omnichannel company headquartered in France. The company provides customer acquisition, customer care, technical support, debt collection, social media,Teleperformance SE is an omnichannel company headquartered in France. The company provides customer acquisition, customer care, technical support, debt collection, social media,Teleperformance SE is an omnichannel company headquartered in France. The company provides customer acquisition, customer care, technical support, debt collection, social media,Teleperformance SE is an omnichannel company headquartered in France. The company provides customer acquisition, customer care, technical support, debt collection, social media,Teleperformance SE is an omnichannel company headquartered in France. The company provides customer acquisition, customer care, technical support, debt collection, social media,Teleperformance SE is an omnichannel company headquartered in France. The company provides customer acquisition, customer care, technical support, debt collection, social media,'
     },
 ]
 
@@ -80,7 +104,7 @@ export default function TPPedia() {
                 <div className="tppedia-main-body">
                     <Swiper
                         spaceBetween={50}
-                        slidesPerView={4}
+                        slidesPerView={5}
                         navigation
                         pagination={{ clickable: true }}
                         onSlideChange={() => console.log('slide change')}

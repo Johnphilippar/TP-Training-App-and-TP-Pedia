@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import parse from 'html-react-parser';
+import Modal from 'react-modal';
 export default function TPPediaForm(props) {
 
     const [articleText, setArticleText] = useState('')
@@ -14,15 +15,17 @@ export default function TPPediaForm(props) {
                 </div>
                 <div className="article-form">
                     <div className="input-form">
-                        <span>Article Name</span>
-                        <input className="form-control" type="text" />
+                        <div className="form">
+                            <label>Article Name</label>
+                            <input className="form-control" type="text" />
+                        </div>
+                        <div className="form">
+                            <label>Image</label>
+                            <input className="form-control" type="file" />
+                        </div>
                     </div>
-                    <div className="input-form">
-                        <span>Image</span>
-                        <input className="form-control" type="file" />
-                    </div>
-                    <div className="input-form" style={{marginBottom:'0'}}>
-                        <span>Article Data</span>
+                    <div className="input-form articletext" style={{ marginBottom: '0' , display: 'block' }}>
+                        <label>Article Data</label>
                         <CKEditor
                             editor={ClassicEditor}
                             data={articleText}
@@ -37,12 +40,12 @@ export default function TPPediaForm(props) {
                         <p>{parse(articleText)}</p>
                     </div> */}
                 </div>
-                <hr/>
                 <div className="forms-action">
-                    <button className="btn btn-primary" style={{marginRight:"12px"}}>Submit</button>
-                    <button className="btn btn-danger" onClick={props.close} type="button">
+                    <button className="cancel-btn" style={{ marginRight: "12px" }} onClick={props.close} type="button">
                         Close
                     </button>
+                    <button className="submit-btn">Submit</button>
+                    
                 </div>
             </div>
         </>
